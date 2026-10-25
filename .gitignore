@@ -46,3 +46,6 @@ CLAUDE.md
 
 # Claude Code worktrees
 .claude/
+
+# Demo certs
+example/main/certs/*.pem

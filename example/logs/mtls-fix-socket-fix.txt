@@ -1,0 +1,236 @@
+
+I (316) cpu_start: Pro cpu start user code
+I (316) cpu_start: cpu freq: 160000000 Hz
+I (318) app_init: Application information:
+I (322) app_init: Project name:     nats-test-app
+I (326) app_init: App version:      v1.4.0-dirty
+I (330) app_init: Compile time:     Oct 25 2026 12:27:50
+I (336) app_init: ELF file SHA256:  5e0425b2f...
+I (340) app_init: ESP-IDF:          v6.0.1-dirty
+I (344) efuse_init: Min chip rev:     v0.0
+I (348) efuse_init: Max chip rev:     v0.99 
+I (352) efuse_init: Chip rev:         v0.2
+I (356) heap_init: Initializing. RAM available for dynamic allocation:
+I (362) heap_init: At 40821900 len 0005AD10 (363 KiB): RAM
+I (367) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM
+I (372) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM
+I (379) spi_flash: detected chip: generic
+I (382) spi_flash: flash io: dio
+W (385) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (397) sleep_gpio: Configure to isolate all GPIO pins in sleep state
+I (403) sleep_gpio: Enable automatic switching of GPIO sleep configuration
+I (418) main_task: Started on CPU0
+I (420) main_task: Calling app_main()
+I (424) nats_test: ESP-IDF NATS Client - Comprehensive Test
+I (429) nats_test: ESP-IDF Version: v6.0.1-dirty
+I (445) ANTENNA: RF Switch enabled. External U.FL antenna selected.
+I (447) pp: pp rom version: 5b8dcfa
+I (448) net80211: net80211 rom version: 5b8dcfa
+I (450) wifi:wifi driver task: 40828f08, prio:23, stack:6656, core=0
+I (461) wifi:wifi firmware version: b37c951
+I (462) wifi:wifi certification version: v7.0
+I (462) wifi:config NVS flash: enabled
+I (465) wifi:config nano formatting: disabled
+I (469) wifi:mac_version:HAL_MAC_ESP32AX_761,ut_version:N, band mode:0x1
+I (476) wifi:Init data frame dynamic rx buffer num: 32
+I (481) wifi:Init static rx mgmt buffer num: 5
+I (485) wifi:Init management short buffer num: 32
+I (489) wifi:Init dynamic tx buffer num: 32
+I (493) wifi:Init static tx FG buffer num: 2
+I (497) wifi:Init static rx buffer size: 1700 (rxctrl:92, csi:512)
+I (503) wifi:Init static rx buffer num: 10
+I (507) wifi:Init dynamic rx buffer num: 32
+I (512) wifi_init: rx ba win: 6
+I (514) wifi_init: accept mbox: 6
+I (517) wifi_init: tcpip mbox: 32
+I (520) wifi_init: udp mbox: 6
+I (522) wifi_init: tcp mbox: 6
+I (525) wifi_init: tcp tx win: 5760
+I (528) wifi_init: tcp rx win: 5760
+I (532) wifi_init: tcp mss: 1440
+I (535) wifi_init: WiFi IRAM OP enabled
+I (538) wifi_init: WiFi RX IRAM OP enabled
+I (542) wifi_init: WiFi SLP IRAM OP enabled
+I (547) phy_init: phy_version 343,b513b46,Nov 14 2025,16:34:12
+I (618) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).
+
+I (620) wifi:mode <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (620) wifi:enable tsf
+I (624) nats_test: WiFi initialization completed
+I (625) nats_test: Waiting for WiFi connection...
+I (629) wifi:new:<7,0>, old:<1,0>, ap:<255,255>, sta:<7,0>, prof:1, snd_ch_cfg:0x0
+I (637) wifi:(connect) <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (644) wifi:state: init -> auth (0xb0)
+I (648) main_task: Returned from app_main()
+I (652) wifi:state: auth -> assoc (0x0)
+I (662) wifi:state: assoc -> run (0x10)
+I (662) wifi:(trc)phytype:CBW20-SGI, snr:42, maxRate:144, highestRateIdx:0
+W (665) wifi:(trc)band:2G, phymode:3, highestRateIdx:0, lowestRateIdx:11, dataSchedTableSize:14
+I (673) wifi:(trc)band:2G, rate(S-MCS7, rateIdx:0), ampdu(rate:S-MCS7, schedIdx(0, stop:8)), snr:42, ampduState:wait operational
+I (684) wifi:ifidx:0, rssi:-53, nf:-95, phytype(0x3, CBW20-SGI), phymode(0x3, 11bgn), max_rate:144, he:0, vht:0, ht:1
+I (695) wifi:(ht)max.RxAMPDULenExponent:3(65535 bytes), MMSS:6(8 us)
+I (712) wifi:connected  <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (713) wifi:security:  <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (719) wifi:pm start, type: 1, twt_start:0
+
+I (721) wifi:pm start, type:1, aid:0x3, trans-BSSID: <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (732) wifi:dp: 1, bi: 104448, li: 2, scale listen interval from 307200 us to 208896 us
+I (740) wifi:set rx beacon pti, rx_bcn_pti: 10, bcn_timeout: 25000, mt_pti: 10, mt_time: 10000
+I (749) wifi:[ADDBA]TX addba request, tid:0, dialogtoken:1, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x0)
+I (760) wifi:[ADDBA]TX addba request, tid:7, dialogtoken:2, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x20)
+I (770) wifi:[ADDBA]TX addba request, tid:5, dialogtoken:3, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x0)
+W (781) wifi:<ba-add>idx:0, ifx:0, tid:0, TAHI:0x100706d, TALO:0xd39d3318, (ssn:138, win:64, cur_ssn:138), CONF:0xc0000005
+I (792) wifi:[ADDBA]RX addba response, status:0, tid:0/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64
+I (801) wifi:AP's beacon interval = 104448 us, DTIM period = 2
+I (807) wifi:[ADDBA]RX addba response, status:0, tid:7/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64
+I (815) wifi:[ADDBA]RX addba response, status:0, tid:5/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64
+I (1831) esp_netif_handlers: <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (1831) nats_test: WiFi connected, IP: <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (1833) nats_test: Creating NATS client...
+I (1837) nats_test: Adding mTLS certs to client...
+I (1842) nats_test: Connecting to TLS NATS server  <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>:4224...
+I (1848) nats_test: [APPLYING MTLS CERTIFICATE FIXES TO TEST RUN]
+I (1854) nats_test: [APPLYING TLS DISCONNECT FIXES TO TEST RUN]
+I (1859) espidf-nats: Attempting to connect to  <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>:4224
+I (1914) espidf-nats: Connected to  <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>:4224
+I (1939) espidf-nats: Server max_payload: 1048576 bytes
+I (1939) espidf-nats: Server requires TLS
+I (1939) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (1968) espidf-nats: Attached mTLS certificate to client session
+I (1969) espidf-nats: Starting TLS handshake...
+W (3126) espidf-nats: Certificate verification warning:   ! The certificate Common Name (CN) does not match with the expected CN
+
+I (3126) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (3135) nats_test: ✅ Connected to NATS
+I (6502) nats_test: 
+
+I (6502) nats_test: ╔════════════════════════════════════════════════════════╗
+I (6510) nats_test: ║  ESP-IDF NATS CLIENT - COMPREHENSIVE FEATURE TEST      ║
+I (6517) nats_test: ╚════════════════════════════════════════════════════════╝
+I (6534) nats_test: 
+
+I (6536) nats_test: ========== BASIC FEATURES ==========
+I (6541) nats_test: 
+========== TEST: Basic Pub/Sub ==========
+I (6754) nats_test: Received: Hello NATS!
+I (6755) nats_test: ✅ PASS: Basic Pub/Sub
+I (7255) nats_test: 
+========== TEST: Request/Reply ==========
+I (7464) nats_test: Echo request: ping
+I (7569) nats_test: Request response: ping
+I (7570) nats_test: ✅ PASS: Request/Reply
+I (8070) nats_test: 
+========== TEST: Headers (HPUB/HMSG) ==========
+I (8275) nats_test: Received with headers - data: test payload
+I (8276) nats_test: Headers: NATS/1.0
+
+X-Test: true
+
+
+
+
+I (8276) nats_test: ✅ PASS: Headers
+I (8778) nats_test: 
+========== JETSTREAM FEATURES ==========
+I (8778) nats_test: 
+========== TEST: JetStream Stream Create ==========
+I (8888) nats_test: Stream response: {"type":"io.nats.jetstream.api.v1.stream_create_response","config":{"name":"TEST_STREAM","subjects":["test.js.\u003e"],"retention":"limits","max_consumers":-1,"max_msgs":1000,"max_bytes":1048576,"max_age":3600000000000,"max_msgs_per_subject":-1,"max_msg_size":1024,"discard":"old","storage":"memory","num_replicas":1,"duplicate_window":120000000000,"compression":"none","allow_direct":false,"mirror_direct":false,"sealed":false,"deny_delete":false,"deny_purge":false,"allow_rollup_hdrs":false,"consumer_limits":{},"allow_msg_ttl":false,"metadata":{"_nats.level":"5","_nats.req.level":"0","_nats.ver":"2.15.1"}},"created":"2026-10-25T19:53:18.790469313Z","state":{"messages":4,"bytes":316,"first_seq":1,"first_ts":"2026-10-25T19:53:54.001495925Z","last_seq":4,"last_ts":"2026-10-25T20:10:59.562607104Z","num_subjects":1,"consumer_count":1},"ts":"2026-10-25T20:24:48.884347043Z","did_create":true}
+I (8958) nats_test: ✅ PASS: JetStream Stream Create
+I (9463) nats_test: 
+========== TEST: JetStream Publish with ACK ==========
+I (9520) nats_test: JetStream ACK: {"stream":"TEST_STREAM","seq":5}
+I (9521) nats_test: ✅ PASS: JetStream Publish
+I (10021) nats_test: 
+========== TEST: JetStream Consumer Create ==========
+I (10079) nats_test: Consumer response: {"type":"io.nats.jetstream.api.v1.consumer_create_response","stream_name":"TEST_STREAM","name":"test_consumer","created":"2026-10-25T19:53:56.013444012Z","config":{"durable_name":"test_consumer","name":"test_consumer","deliver_policy":"all","ack_policy":"explicit","ack_wait":30000000000,"max_deliver":3,"filter_subject":"test.js.\u003e","replay_policy":"instant","max_waiting":512,"max_ack_pending":1000,"num_replicas":0,"metadata":{"_nats.level":"5","_nats.req.level":"0","_nats.ver":"2.15.1"}},"delivered":{"consumer_seq":10,"stream_seq":4,"last_active":"2026-10-25T20:11:00.814568173Z"},"ack_floor":{"consumer_seq":0,"stream_seq":0},"num_ack_pending":2,"num_redelivered":3,"num_waiting":0,"num_pending":1,"ts":"2026-10-25T20:24:50.110241019Z"}
+I (10137) nats_test: ✅ PASS: JetStream Consumer Create
+I (10642) nats_test: 
+========== TEST: JetStream Pull ==========
+W (15651) nats_test: ⚠️  JetStream Pull - no messages (may be expected)
+I (16151) nats_test: 
+========== KEY-VALUE STORE ==========
+I (16151) nats_test: 
+========== TEST: KV Bucket Create ==========
+W (16158) nats_test: Pull timeout (expected if no messages)
+I (16911) nats_test: KV bucket response: {"type":"io.nats.jetstream.api.v1.stream_create_response","config":{"name":"KV_test_config","subjects":["$KV.test_config.\u003e"],"retention":"limits","max_consumers":-1,"max_msgs":-1,"max_bytes":1048576,"max_age":0,"max_msgs_per_subject":5,"max_msg_size":1024,"discard":"new","storage":"memory","num_replicas":1,"duplicate_window":120000000000,"compression":"none","allow_direct":false,"mirror_direct":false,"sealed":false,"deny_delete":true,"deny_purge":false,"allow_rollup_hdrs":true,"consumer_limits":{},"allow_msg_ttl":false,"metadata":{"_nats.level":"5","_nats.req.level":"0","_nats.ver":"2.15.1"}},"created":"2026-10-25T19:54:02.201677156Z","state":{"messages":5,"bytes":250,"first_seq":2,"first_ts":"2026-10-25T19:55:45.700154132Z","last_seq":6,"last_ts":"2026-10-25T20:11:07.657858104Z","num_subjects":1,"consumer_count":0},"ts":"2026-10-25T20:24:56.247076063Z","did_create":true}
+I (16981) nats_test: ✅ PASS: KV Bucket Create
+I (17485) nats_test: 
+========== TEST: KV Put ==========
+I (17542) nats_test: KV put ACK: {"stream":"KV_test_config","seq":7}
+I (17543) nats_test: ✅ PASS: KV Put
+I (18043) nats_test: 
+========== TEST: KV Get ==========
+I (18151) nats_test: KV get response: {"type":"io.nats.jetstream.api.v1.stream_msg_get_response","message":{"subject":"$KV.test_config.device_id","seq":7,"data":"RVNQMzItMDAx","time":"2026-10-25T20:24:57.572405756Z"}}
+I (18160) nats_test: ✅ PASS: KV Get
+I (18663) nats_test: 
+========== OBJECT STORE ==========
+I (18663) nats_test: 
+========== TEST: Object Store Bucket Create ==========
+I (18722) nats_test: Object bucket response: {"type":"io.nats.jetstream.api.v1.stream_create_response","config":{"name":"OBJ_test_firmware","description":"Test firmware bucket","subjects":["$O.test_firmware.C.\u003e","$O.test_firmware.M.\u003e"],"retention":"limits","max_consumers":-1,"max_msgs":-1,"max_bytes":10485760,"max_age":0,"max_msgs_per_subject":-1,"max_msg_size":-1,"discard":"new","storage":"memory","num_replicas":1,"duplicate_window":120000000000,"compression":"none","allow_direct":false,"mirror_direct":false,"sealed":false,"deny_delete":false,"deny_purge":false,"allow_rollup_hdrs":false,"consumer_limits":{},"allow_msg_ttl":false,"metadata":{"_nats.level":"5","_nats.req.level":"0","_nats.ver":"2.15.1"}},"created":"2026-10-25T19:54:06.357144378Z","state":{"messages":7,"bytes":300888,"first_seq":1,"first_ts":"2026-10-25T20:09:07.939862973Z","last_seq":7,"last_ts":"2026-10-25T20:11:10.692719385Z","num_subjects":4,"consumer_count":0},"ts":"2026-10-25T20:24:58.753158301Z","did_create":true}
+I (18800) nats_test: ✅ PASS: Object Bucket Create
+I (19304) nats_test: 
+========== TEST: Object Store Put ==========
+I (20703) espidf-nats: Server max_payload: 1048576 bytes
+I (20704) espidf-nats: Server requires TLS
+I (20704) espidf-nats: Server requires TLS - already secured (native TLS)
+I (20759) nats_test: Object put ACK: {"stream":"OBJ_test_firmware","seq":10}
+I (20760) nats_test: ✅ PASS: Object Put (250 KB with chunking)
+I (21261) nats_test: 
+========== TEST: Object Store Get Info ==========
+I (21369) nats_test: Object info: {"type":"io.nats.jetstream.api.v1.stream_msg_get_response","message":{"subject":"$O.test_firmware.M.test_file.bin","seq":10,"data":"eyJuYW1lIjoidGVzdF9maWxlLmJpbiIsInNpemUiOjI1MDAwMCwiY2h1bmtzIjoyLCJudWlkIjoiV2p6bHNDOXo2VlZtSUpPa29TVlZ4NSIsIm9wdGlvbnMiOnsibWF4X2NodW5rX3NpemUiOjEzMTA3Mn0sImRlc2NyaXB0aW9uIjoiVGVzdCBmaXJtd2FyZSBmaWxlIiwibXRpbWUiOjEwNDc3MTUwMDAwMDB9","time":"2026-10-25T20:25:00.734874892Z"}}
+I (21397) nats_test: ✅ PASS: Object Get Info
+I (21901) nats_test: 
+========== ADVANCED FEATURES ==========
+I (21901) nats_test: 
+========== TEST: Ordered Consumer ==========
+I (21959) nats_test: Ordered consumer response: {"type":"io.nats.jetstream.api.v1.consumer_create_response","error":{"code":400,"err_code":10088,"description":"consumer idle heartbeat requires a push based consumer"}}
+I (21968) nats_test: ✅ PASS: Ordered Consumer
+I (22472) nats_test: 
+========== TEST: JetStream Account Info ==========
+I (22579) nats_test: Account info: {"type":"io.nats.jetstream.api.v1.account_info_response","memory":551869,"storage":0,"reserved_memory":12582912,"reserved_storage":0,"streams":3,"consumers":1,"limits":{"max_memory":-1,"max_storage":-1,"max_streams":-1,"max_consumers":-1,"max_ack_pending":-1,"memory_max_stream_bytes":-1,"storage_max_stream_bytes":-1,"max_bytes_required":false},"api":{"level":5,"total":38,"errors":4}}
+I (22605) nats_test: ✅ PASS: Account Info
+I (23109) nats_test: 
+========== TEST: Connection Metrics ==========
+I (23109) nats_test: Connection Metrics:
+I (23109) nats_test:   Messages sent: 18
+I (23111) nats_test:   Messages received: 15
+I (23115) nats_test:   Bytes sent: 253221
+I (23119) nats_test:   Bytes received: 4800
+I (23123) nats_test:   Reconnections: 0
+I (23126) nats_test:   Uptime: 21195 ms
+I (23130) nats_test: ✅ PASS: Connection Metrics
+I (23634) nats_test: 
+========== TEST: Reconnection with Subscription Restoration ==========
+I (23637) nats_test: Subscribed to test.reconnect (sid=15)
+I (23737) nats_test: Forcing disconnect...
+W (23738) nats_test: ❌ Disconnected from NATS
+I (24238) nats_test: Reconnecting...
+I (24238) espidf-nats: Attempting to connect to  <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>:4224
+I (24246) espidf-nats: Connected to  <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>:4224
+I (24267) espidf-nats: Server max_payload: 1048576 bytes
+I (24267) espidf-nats: Server requires TLS
+I (24268) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (24297) espidf-nats: Attached mTLS certificate to client session
+I (24298) espidf-nats: Starting TLS handshake...
+W (25424) espidf-nats: Certificate verification warning:   ! The certificate Common Name (CN) does not match with the expected CN
+
+I (25425) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (25435) espidf-nats: Restored 4 subscriptions after reconnect
+I (25438) nats_test: ✅ Connected to NATS
+I (28076) nats_test: Reconnected! Subscriptions should be restored.
+I (28680) nats_test: Reconnect test msg: Hello after reconnect!
+I (28681) nats_test: ✅ PASS: Reconnection with Subscription Restoration
+I (29183) nats_test: 
+
+I (29183) nats_test: ╔════════════════════════════════════════════════════════╗
+I (29191) nats_test: ║                    TEST SUMMARY                        ║
+I (29198) nats_test: ╚════════════════════════════════════════════════════════╝
+I (29216) nats_test:   ✅ Passed: 16
+I (29219) nats_test:   ❌ Failed: 0
+I (29222) nats_test:   Total:  16
+I (29225) nats_test: 
+
+I (29227) nats_test: 🎉 ALL TESTS PASSED! 🎉
+I (29232) nats_test: Keeping connection alive. Monitoring metrics every 30s...
+I (59240) nats_test: Metrics: Msgs 19/16, Bytes 253512/4822, Uptime 34993 ms
+I (89242) nats_test: Metrics: Msgs 19/16, Bytes 253512/4822, Uptime 64995 ms

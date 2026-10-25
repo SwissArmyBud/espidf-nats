@@ -1,0 +1,327 @@
+
+I (315) cpu_start: Pro cpu start user code
+I (315) cpu_start: cpu freq: 160000000 Hz
+I (317) app_init: Application information:
+I (321) app_init: Project name:     nats-test-app
+I (325) app_init: App version:      v1.4.0-dirty
+I (330) app_init: Compile time:     Oct 25 2026 12:27:50
+I (335) app_init: ELF file SHA256:  6fbc6183b...
+I (339) app_init: ESP-IDF:          v6.0.1-dirty
+I (343) efuse_init: Min chip rev:     v0.0
+load:0x4086e610,len:0x31f4
+entry 0x4086b91a
+I (24) boot: ESP-IDF v6.0.1-dirty 2nd stage bootloader
+I (25) boot: compile time Oct 25 2026 12:27:53
+I (25) boot: chip revision: v0.2
+I (26) boot: efuse block revision: v0.3
+I (29) boot.esp32c6: SPI Speed      : 80MHz
+I (32) boot.esp32c6: SPI Mode       : DIO
+I (36) boot.esp32c6: SPI Flash Size : 2MB
+I (40) boot: Enabling RNG early entropy source...
+I (44) boot: Partition Table:
+I (47) boot: ## Label            Usage          Type ST Offset   Length
+I (53) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (60) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (66) boot:  2 factory          factory app      00 00 00010000 00177000
+I (73) boot: End of partition table
+I (76) esp_image: segment 0: paddr=00010020 vaddr=420c8020 size=276f0h (161520) map
+I (114) esp_image: segment 1: paddr=00037718 vaddr=40800000 size=00900h (  2304) load
+I (115) esp_image: segment 2: paddr=00038020 vaddr=42000020 size=c2d18h (797976) map
+I (267) esp_image: segment 3: paddr=000fad40 vaddr=40800900 size=1780ch ( 96268) load
+I (288) esp_image: segment 4: paddr=00112554 vaddr=40818110 size=03b7ch ( 15228) load
+I (298) boot: Loaded app from partition at offset 0x10000
+I (298) boot: Disabling RNG early entropy source...
+I (308) cpu_start: Unicore app
+I (316) cpu_start: GPIO 17 and 16 are used as console UART I/O pins
+I (317) cpu_start: Pro cpu start user code
+I (317) cpu_start: cpu freq: 160000000 Hz
+I (319) app_init: Application information:
+I (322) app_init: Project name:     nats-test-app
+I (327) app_init: App version:      v1.4.0-dirty
+I (331) app_init: Compile time:     Oct 25 2026 12:27:50
+I (336) app_init: ELF file SHA256:  6fbc6183b...
+I (341) app_init: ESP-IDF:          v6.0.1-dirty
+I (345) efuse_init: Min chip rev:     v0.0
+I (349) efuse_init: Max chip rev:     v0.99 
+I (353) efuse_init: Chip rev:         v0.2
+I (357) heap_init: Initializing. RAM available for dynamic allocation:
+I (363) heap_init: At 40821900 len 0005AD10 (363 KiB): RAM
+I (368) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM
+I (373) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM
+I (379) spi_flash: detected chip: generic
+I (382) spi_flash: flash io: dio
+W (385) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (398) sleep_gpio: Configure to isolate all GPIO pins in sleep state
+I (404) sleep_gpio: Enable automatic switching of GPIO sleep configuration
+I (419) main_task: Started on CPU0
+I (421) main_task: Calling app_main()
+I (425) nats_test: ESP-IDF NATS Client - Comprehensive Test
+I (430) nats_test: ESP-IDF Version: v6.0.1-dirty
+I (446) ANTENNA: RF Switch enabled. External U.FL antenna selected.
+I (449) pp: pp rom version: 5b8dcfa
+I (449) net80211: net80211 rom version: 5b8dcfa
+I (451) wifi:wifi driver task: 40828f08, prio:23, stack:6656, core=0
+I (462) wifi:wifi firmware version: b37c951
+I (463) wifi:wifi certification version: v7.0
+I (463) wifi:config NVS flash: enabled
+I (466) wifi:config nano formatting: disabled
+I (470) wifi:mac_version:HAL_MAC_ESP32AX_761,ut_version:N, band mode:0x1
+I (477) wifi:Init data frame dynamic rx buffer num: 32
+I (482) wifi:Init static rx mgmt buffer num: 5
+I (486) wifi:Init management short buffer num: 32
+I (490) wifi:Init dynamic tx buffer num: 32
+I (494) wifi:Init static tx FG buffer num: 2
+I (498) wifi:Init static rx buffer size: 1700 (rxctrl:92, csi:512)
+I (504) wifi:Init static rx buffer num: 10
+I (508) wifi:Init dynamic rx buffer num: 32
+I (513) wifi_init: rx ba win: 6
+I (515) wifi_init: accept mbox: 6
+I (518) wifi_init: tcpip mbox: 32
+I (521) wifi_init: udp mbox: 6
+I (524) wifi_init: tcp mbox: 6
+I (526) wifi_init: tcp tx win: 5760
+I (530) wifi_init: tcp rx win: 5760
+I (533) wifi_init: tcp mss: 1440
+I (536) wifi_init: WiFi IRAM OP enabled
+I (539) wifi_init: WiFi RX IRAM OP enabled
+I (543) wifi_init: WiFi SLP IRAM OP enabled
+I (548) phy_init: phy_version 343,b513b46,Nov 14 2025,16:34:12
+I (623) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).
+
+I (624) wifi:mode <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (624) wifi:enable tsf
+I (628) nats_test: WiFi initialization completed
+I (629) nats_test: Waiting for WiFi connection...
+I (634) wifi:new:<7,0>, old:<1,0>, ap:<255,255>, sta:<7,0>, prof:1, snd_ch_cfg:0x0
+I (642) wifi:(connect) <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (648) wifi:state: init -> auth (0xb0)
+I (653) main_task: Returned from app_main()
+I (659) wifi:state: auth -> assoc (0x0)
+I (665) wifi:state: assoc -> run (0x10)
+I (666) wifi:(trc)phytype:CBW20-SGI, snr:42, maxRate:144, highestRateIdx:0
+W (669) wifi:(trc)band:2G, phymode:3, highestRateIdx:0, lowestRateIdx:11, dataSchedTableSize:14
+I (678) wifi:(trc)band:2G, rate(S-MCS7, rateIdx:0), ampdu(rate:S-MCS7, schedIdx(0, stop:8)), snr:42, ampduState:wait operational
+I (689) wifi:ifidx:0, rssi:-53, nf:-95, phytype(0x3, CBW20-SGI), phymode(0x3, 11bgn), max_rate:144, he:0, vht:0, ht:1
+I (699) wifi:(ht)max.RxAMPDULenExponent:3(65535 bytes), MMSS:6(8 us)
+I (719) wifi:connected <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (720) wifi:security <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (726) wifi:pm start, type: 1, twt_start:0
+
+I (728) wifi:pm start, type:1, aid:0x3, trans-BSSID <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (740) wifi:dp: 1, bi: 104448, li: 2, scale listen interval from 307200 us to 208896 us
+I (747) wifi:set rx beacon pti, rx_bcn_pti: 10, bcn_timeout: 25000, mt_pti: 10, mt_time: 10000
+I (756) wifi:[ADDBA]TX addba request, tid:0, dialogtoken:1, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x0)
+I (767) wifi:[ADDBA]TX addba request, tid:7, dialogtoken:2, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x20)
+I (777) wifi:[ADDBA]TX addba request, tid:5, dialogtoken:3, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x0)
+W (789) wifi:<ba-add>idx:0, ifx:0, tid:0, TAHI:0x100706d, TALO:0xd39d3318, (ssn:140, win:64, cur_ssn:140), CONF:0xc0000005
+I (799) wifi:[ADDBA]RX addba response, status:0, tid:0/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64
+I (808) wifi:AP's beacon interval = 104448 us, DTIM period = 2
+I (814) wifi:[ADDBA]RX addba response, status:0, tid:7/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64
+I (822) wifi:[ADDBA]RX addba response, status:0, tid:5/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64
+I (1848) esp_netif_handlers <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (1849) nats_test: WiFi connected, IP: <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (1850) nats_test: Creating NATS client...
+W (1854) espidf-nats: TLS enabled without server_name - SNI will use hostname from connection
+I (1862) nats_test: Connecting to TLS NATS server <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (1869) nats_test: [NOT APPLYING MTLS CERTIFICATE FIXES TO TEST RUN]
+I (1875) nats_test: [APPLYING TLS DISCONNECT FIXES TO TEST RUN]
+I (1880) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (1929) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (3136) espidf-nats: Server max_payload: 1048576 bytes
+I (3137) espidf-nats: Server requires TLS
+I (3138) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (3149) espidf-nats: Starting TLS handshake...
+E (3934) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (3936) espidf-nats: TLS upgrade failed
+E (6930) espidf-nats: NATS handshake timeout
+E (6930) nats_test: Attempt 1 failed to connect: TLS connection failed
+I (7930) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (7964) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (7986) espidf-nats: Server max_payload: 1048576 bytes
+I (7986) espidf-nats: Server requires TLS
+I (7986) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (7998) espidf-nats: Starting TLS handshake...
+E (8784) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (8786) espidf-nats: TLS upgrade failed
+E (12970) espidf-nats: NATS handshake timeout
+E (12970) nats_test: Attempt 2 failed to connect: TLS connection failed
+I (13970) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (13982) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (14009) espidf-nats: Server max_payload: 1048576 bytes
+I (14009) espidf-nats: Server requires TLS
+I (14009) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (14021) espidf-nats: Starting TLS handshake...
+E (14818) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (14820) espidf-nats: TLS upgrade failed
+E (18984) espidf-nats: NATS handshake timeout
+E (18984) nats_test: Attempt 3 failed to connect: TLS connection failed
+I (19984) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (19989) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (20008) espidf-nats: Server max_payload: 1048576 bytes
+I (20008) espidf-nats: Server requires TLS
+I (20008) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (20021) espidf-nats: Starting TLS handshake...
+E (20837) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (20838) espidf-nats: TLS upgrade failed
+E (24993) espidf-nats: NATS handshake timeout
+E (24993) nats_test: Attempt 4 failed to connect: TLS connection failed
+I (25993) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (26000) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (26019) espidf-nats: Server max_payload: 1048576 bytes
+I (26019) espidf-nats: Server requires TLS
+I (26020) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (26032) espidf-nats: Starting TLS handshake...
+E (26834) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (26836) espidf-nats: TLS upgrade failed
+E (31010) espidf-nats: NATS handshake timeout
+E (31010) nats_test: Attempt 5 failed to connect: TLS connection failed
+I (32010) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (32017) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (32037) espidf-nats: Server max_payload: 1048576 bytes
+I (32037) espidf-nats: Server requires TLS
+I (32038) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (32050) espidf-nats: Starting TLS handshake...
+E (32847) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (32849) espidf-nats: TLS upgrade failed
+E (37024) espidf-nats: NATS handshake timeout
+E (37024) nats_test: Attempt 6 failed to connect: TLS connection failed
+I (38024) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (38032) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (38050) espidf-nats: Server max_payload: 1048576 bytes
+I (38051) espidf-nats: Server requires TLS
+I (38051) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (38063) espidf-nats: Starting TLS handshake...
+E (38845) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (38846) espidf-nats: TLS upgrade failed
+E (43041) espidf-nats: NATS handshake timeout
+E (43041) nats_test: Attempt 7 failed to connect: TLS connection failed
+I (44041) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (44048) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (44066) espidf-nats: Server max_payload: 1048576 bytes
+I (44066) espidf-nats: Server requires TLS
+I (44066) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (44079) espidf-nats: Starting TLS handshake...
+E (44852) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (44854) espidf-nats: TLS upgrade failed
+E (49058) espidf-nats: NATS handshake timeout
+E (49058) nats_test: Attempt 8 failed to connect: TLS connection failed
+I (50058) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (50063) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (50081) espidf-nats: Server max_payload: 1048576 bytes
+I (50081) espidf-nats: Server requires TLS
+I (50081) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (50094) espidf-nats: Starting TLS handshake...
+E (50881) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (50883) espidf-nats: TLS upgrade failed
+E (55068) espidf-nats: NATS handshake timeout
+E (55068) nats_test: Attempt 9 failed to connect: TLS connection failed
+I (56068) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (56075) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (56092) espidf-nats: Server max_payload: 1048576 bytes
+I (56093) espidf-nats: Server requires TLS
+I (56093) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (56105) espidf-nats: Starting TLS handshake...
+E (56892) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (56895) espidf-nats: TLS upgrade failed
+E (61078) espidf-nats: NATS handshake timeout
+E (61078) nats_test: Attempt 10 failed to connect: TLS connection failed
+I (62078) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (62090) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (62112) espidf-nats: Server max_payload: 1048576 bytes
+I (62112) espidf-nats: Server requires TLS
+I (62113) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (62125) espidf-nats: Starting TLS handshake...
+E (62893) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (62895) espidf-nats: TLS upgrade failed
+E (67091) espidf-nats: NATS handshake timeout
+E (67091) nats_test: Attempt 11 failed to connect: TLS connection failed
+I (68091) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (68096) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (68116) espidf-nats: Server max_payload: 1048576 bytes
+I (68116) espidf-nats: Server requires TLS
+I (68117) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (68129) espidf-nats: Starting TLS handshake...
+E (68916) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (73102) espidf-nats: NATS handshake timeout
+E (73102) nats_test: Attempt 12 failed to connect: TLS connection failed
+I (74102) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (74108) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (74129) espidf-nats: Server max_payload: 1048576 bytes
+I (74129) espidf-nats: Server requires TLS
+I (74130) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (74142) espidf-nats: Starting TLS handshake...
+E (74901) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (74903) espidf-nats: TLS upgrade failed
+E (79117) espidf-nats: NATS handshake timeout
+E (79117) nats_test: Attempt 13 failed to connect: TLS connection failed
+I (80117) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (80124) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (80141) espidf-nats: Server max_payload: 1048576 bytes
+I (80141) espidf-nats: Server requires TLS
+I (80141) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (80153) espidf-nats: Starting TLS handshake...
+E (80928) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (80930) espidf-nats: TLS upgrade failed
+E (85134) espidf-nats: NATS handshake timeout
+E (85134) nats_test: Attempt 14 failed to connect: TLS connection failed
+I (86134) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (86140) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (86202) espidf-nats: Server max_payload: 1048576 bytes
+I (86203) espidf-nats: Server requires TLS
+I (86203) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (86215) espidf-nats: Starting TLS handshake...
+E (87016) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (87019) espidf-nats: TLS upgrade failed
+E (91142) espidf-nats: NATS handshake timeout
+E (91142) nats_test: Attempt 15 failed to connect: TLS connection failed
+I (92142) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (92148) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (92165) espidf-nats: Server max_payload: 1048576 bytes
+I (92165) espidf-nats: Server requires TLS
+I (92166) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (92178) espidf-nats: Starting TLS handshake...
+E (92960) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (92962) espidf-nats: TLS upgrade failed
+E (97156) espidf-nats: NATS handshake timeout
+E (97156) nats_test: Attempt 16 failed to connect: TLS connection failed
+I (98156) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (98179) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (98198) espidf-nats: Server max_payload: 1048576 bytes
+I (98198) espidf-nats: Server requires TLS
+I (98198) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (98211) espidf-nats: Starting TLS handshake...
+E (99018) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (99020) espidf-nats: TLS upgrade failed
+E (103185) espidf-nats: NATS handshake timeout
+E (103185) nats_test: Attempt 17 failed to connect: TLS connection failed
+I (104185) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (104197) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (104218) espidf-nats: Server max_payload: 1048576 bytes
+I (104218) espidf-nats: Server requires TLS
+I (104219) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (104231) espidf-nats: Starting TLS handshake...
+E (105047) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (105049) espidf-nats: TLS upgrade failed
+E (109203) espidf-nats: NATS handshake timeout
+E (109203) nats_test: Attempt 18 failed to connect: TLS connection failed
+I (110203) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (110212) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (110227) espidf-nats: Server max_payload: 1048576 bytes
+I (110228) espidf-nats: Server requires TLS
+I (110228) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (110241) espidf-nats: Starting TLS handshake...
+E (111007) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (111009) espidf-nats: TLS upgrade failed
+E (115214) espidf-nats: NATS handshake timeout
+E (115214) nats_test: Attempt 19 failed to connect: TLS connection failed
+I (116214) espidf-nats: Attempting to connect to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (116219) espidf-nats: Connected to <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+I (116236) espidf-nats: Server max_payload: 1048576 bytes
+I (116236) espidf-nats: Server requires TLS
+I (116236) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (116249) espidf-nats: Starting TLS handshake...
+E (117076) espidf-nats: mbedtls_ssl_handshake failed: X509 - Certificate verification failed, e.g. CRL, CA or signature check failed (0x2700)
+E (117080) espidf-nats: TLS upgrade failed
+E (121223) espidf-nats: NATS handshake timeout
+E (121223) nats_test: Attempt 20 failed to connect: TLS connection failed
+E (122223) nats_test: Exiting after meeting threshold for LWIP behavior probing.

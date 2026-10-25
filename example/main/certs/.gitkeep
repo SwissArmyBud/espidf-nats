@@ -1,0 +1,4 @@
+Add your mTLS certs to this folder if using IDF binary loader
+
+In CMakeLists.txt:
+EMBED_TXTFILES certs/client-cert.pem certs/client-key.pem certs/ca-cert.pem

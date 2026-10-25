@@ -31,6 +31,7 @@
 #include "subscription.h"
 #include "transport.h"
 #include "tcp_transport.h"
+#include <errno.h>
 
 // Auto-detect esp_websocket_client availability using __has_include (C++17)
 // This is more reliable than CMake-defined macros for managed components
@@ -2260,7 +2261,56 @@ class NATS {
                     last_error_code = NATS_ERR_TLS_INIT_FAILED;
                     return false;
                 }
+            }       
+                                     
+#if ATTACH_MTLS_CERTS
+            // Initialize client mTLS context if configuration values are present
+            if (
+                tls_config.client_cert != NULL && tls_config.client_cert_len > 0 &&
+                tls_config.client_key != NULL && tls_config.client_key_len > 0
+            ) {
+
+                // Basic mTLS context for the client
+                mbedtls_x509_crt* mbedtls_clientcert = NULL;
+                mbedtls_pk_context* mbedtls_clientkey = NULL;
+
+                // Parse the client certificate
+                mbedtls_clientcert = (mbedtls_x509_crt*)malloc(sizeof(mbedtls_x509_crt));
+                mbedtls_x509_crt_init(mbedtls_clientcert);
+                ret = mbedtls_x509_crt_parse(mbedtls_clientcert,
+                                            (const unsigned char*)tls_config.client_cert,
+                                            tls_config.client_cert_len);
+                if (ret != 0) {
+                    mbedtls_strerror(ret, err_buf, sizeof(err_buf));
+                    ESP_LOGE(tag, "Client mTLS certificate parse failed: %s (0x%x)", err_buf, -ret);
+                    cleanup_mbedtls();
+                    return false;
+                }
+                
+                // Parse the client key
+                mbedtls_clientkey = (mbedtls_pk_context*)malloc(sizeof(mbedtls_pk_context));
+                mbedtls_pk_init(mbedtls_clientkey);
+                ret = mbedtls_pk_parse_key(mbedtls_clientkey,
+                                            (const unsigned char*)tls_config.client_key,
+                                            tls_config.client_key_len, NULL, 0);
+                if (ret != 0) {
+                    mbedtls_strerror(ret, err_buf, sizeof(err_buf));
+                    ESP_LOGE(tag, "Client mTLS key parse failed: %s (0x%x)", err_buf, -ret);
+                    cleanup_mbedtls();
+                    return false;
+                }
+                
+                // Attach the client cert and key to the mbedtls config
+                ret = mbedtls_ssl_conf_own_cert(mbedtls_conf, mbedtls_clientcert, mbedtls_clientkey);
+                if (ret != 0) {
+                    mbedtls_strerror(ret, err_buf, sizeof(err_buf));
+                    ESP_LOGE(tag, "Client mTLS certificate attachment failed: %s (0x%x)", err_buf, -ret);
+                    cleanup_mbedtls();
+                    return false;
+                }
+                ESP_LOGI(tag, "Attached mTLS certificate to client session");
             }
+#endif
 
             // Set up SSL config
             ret = mbedtls_ssl_config_defaults(mbedtls_conf,
@@ -2447,7 +2497,16 @@ class NATS {
             // Try each address until we successfully connect
             for (rp = result; rp != NULL; rp = rp->ai_next) {
                 sockfd = socket(rp->ai_family, rp->ai_socktype, rp->ai_protocol);
-                if (sockfd < 0) continue;
+                // Log why we're having socket issues
+                if (sockfd < 0) {
+                    int err = errno;   // capture first; logging can clobber errno
+                    if (err == ENOBUFS) {
+                        ESP_LOGE(tag, "socket() failed: LWIP has no free TCP sockets available (ENOBUFS) (max %d)", CONFIG_LWIP_MAX_ACTIVE_TCP);
+                    } else {
+                        ESP_LOGE(tag, "socket() failed: errno %d", err);
+                    }
+                    continue;
+                }
 
                 // Set socket to non-blocking mode for timeout support
                 int flags = fcntl(sockfd, F_GETFL, 0);
@@ -2609,10 +2668,13 @@ class NATS {
         }
 
         void disconnect() {
+
+#if !RUN_FULL_DISCONNECT
             if (!connected && (transport == NULL || !transport->is_connected())) return;
-            last_reconnect_attempt = NATSUtil::millis();
             connected = false;
             connect_state = DISCONNECTED;
+#endif
+            last_reconnect_attempt = NATSUtil::millis();
             async_connect_cb = NULL;
 
             if (last_error_code == NATS_ERR_NONE) {
@@ -2647,8 +2709,15 @@ class NATS {
             // Subscriptions are preserved so they can be restored on reconnect.
             // Use shutdown() or the destructor to fully clean up subscriptions.
 
+#if !RUN_FULL_DISCONNECT
             if (on_disconnect != NULL) on_disconnect();
+#else
+            if (connected && on_disconnect != NULL) on_disconnect();
+            connected = false;
+            connect_state = DISCONNECTED;
+#endif
         }
+
 
         // Fully close the connection and clean up all subscriptions
         // Use this when you want to completely shut down the client
