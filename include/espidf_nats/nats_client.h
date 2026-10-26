@@ -82,6 +82,8 @@ class NATS {
         mbedtls_ssl_context* mbedtls_ssl;
         mbedtls_ssl_config* mbedtls_conf;
         mbedtls_x509_crt* mbedtls_cacert;
+        mbedtls_x509_crt* mbedtls_clientcert;   // mTLS client cert, owned; referenced by mbedtls_conf
+        mbedtls_pk_context* mbedtls_clientkey;  // mTLS client key, owned; referenced by mbedtls_conf
 #if MBEDTLS_VERSION_NUMBER < 0x04000000
         mbedtls_entropy_context* mbedtls_entropy;
         mbedtls_ctr_drbg_context* mbedtls_ctr_drbg;
@@ -160,6 +162,8 @@ class NATS {
             mbedtls_ssl(NULL),
             mbedtls_conf(NULL),
             mbedtls_cacert(NULL),
+            mbedtls_clientcert(NULL),
+            mbedtls_clientkey(NULL),
 #if MBEDTLS_VERSION_NUMBER < 0x04000000
             mbedtls_entropy(NULL),
             mbedtls_ctr_drbg(NULL),
@@ -264,6 +268,8 @@ class NATS {
             mbedtls_ssl(NULL),
             mbedtls_conf(NULL),
             mbedtls_cacert(NULL),
+            mbedtls_clientcert(NULL),
+            mbedtls_clientkey(NULL),
 #if MBEDTLS_VERSION_NUMBER < 0x04000000
             mbedtls_entropy(NULL),
             mbedtls_ctr_drbg(NULL),
@@ -2182,6 +2188,17 @@ class NATS {
                 free(mbedtls_cacert);
                 mbedtls_cacert = NULL;
             }
+            // Free after mbedtls_conf, which holds pointers to these
+            if (mbedtls_clientcert) {
+                mbedtls_x509_crt_free(mbedtls_clientcert);
+                free(mbedtls_clientcert);
+                mbedtls_clientcert = NULL;
+            }
+            if (mbedtls_clientkey) {
+                mbedtls_pk_free(mbedtls_clientkey);
+                free(mbedtls_clientkey);
+                mbedtls_clientkey = NULL;
+            }
 #if MBEDTLS_VERSION_NUMBER < 0x04000000
             if (mbedtls_ctr_drbg) {
                 mbedtls_ctr_drbg_free(mbedtls_ctr_drbg);
@@ -2269,14 +2286,19 @@ class NATS {
                 tls_config.client_cert != NULL && tls_config.client_cert_len > 0 &&
                 tls_config.client_key != NULL && tls_config.client_key_len > 0
             ) {
-
-                // Basic mTLS context for the client
-                mbedtls_x509_crt* mbedtls_clientcert = NULL;
-                mbedtls_pk_context* mbedtls_clientkey = NULL;
+                // Initialize the required context for mTLS
+                mbedtls_clientcert = (mbedtls_x509_crt*)malloc(sizeof(mbedtls_x509_crt));
+                mbedtls_clientkey = (mbedtls_pk_context*)malloc(sizeof(mbedtls_pk_context));
+                if (!mbedtls_clientcert || !mbedtls_clientkey) {
+                    ESP_LOGE(tag, "Failed to allocate client mTLS context");
+                    cleanup_mbedtls();
+                    last_error_code = NATS_ERR_OUT_OF_MEMORY;
+                    return false;
+                }
+                mbedtls_x509_crt_init(mbedtls_clientcert);
+                mbedtls_pk_init(mbedtls_clientkey);
 
                 // Parse the client certificate
-                mbedtls_clientcert = (mbedtls_x509_crt*)malloc(sizeof(mbedtls_x509_crt));
-                mbedtls_x509_crt_init(mbedtls_clientcert);
                 ret = mbedtls_x509_crt_parse(mbedtls_clientcert,
                                             (const unsigned char*)tls_config.client_cert,
                                             tls_config.client_cert_len);
@@ -2284,12 +2306,11 @@ class NATS {
                     mbedtls_strerror(ret, err_buf, sizeof(err_buf));
                     ESP_LOGE(tag, "Client mTLS certificate parse failed: %s (0x%x)", err_buf, -ret);
                     cleanup_mbedtls();
+                    last_error_code = NATS_ERR_TLS_INIT_FAILED;
                     return false;
                 }
-                
+
                 // Parse the client key
-                mbedtls_clientkey = (mbedtls_pk_context*)malloc(sizeof(mbedtls_pk_context));
-                mbedtls_pk_init(mbedtls_clientkey);
                 ret = mbedtls_pk_parse_key(mbedtls_clientkey,
                                             (const unsigned char*)tls_config.client_key,
                                             tls_config.client_key_len, NULL, 0);
@@ -2297,15 +2318,17 @@ class NATS {
                     mbedtls_strerror(ret, err_buf, sizeof(err_buf));
                     ESP_LOGE(tag, "Client mTLS key parse failed: %s (0x%x)", err_buf, -ret);
                     cleanup_mbedtls();
+                    last_error_code = NATS_ERR_TLS_INIT_FAILED;
                     return false;
                 }
-                
+
                 // Attach the client cert and key to the mbedtls config
                 ret = mbedtls_ssl_conf_own_cert(mbedtls_conf, mbedtls_clientcert, mbedtls_clientkey);
                 if (ret != 0) {
                     mbedtls_strerror(ret, err_buf, sizeof(err_buf));
                     ESP_LOGE(tag, "Client mTLS certificate attachment failed: %s (0x%x)", err_buf, -ret);
                     cleanup_mbedtls();
+                    last_error_code = NATS_ERR_TLS_INIT_FAILED;
                     return false;
                 }
                 ESP_LOGI(tag, "Attached mTLS certificate to client session");
