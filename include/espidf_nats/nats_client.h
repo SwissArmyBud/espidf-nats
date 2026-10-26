@@ -2447,7 +2447,15 @@ class NATS {
             // Try each address until we successfully connect
             for (rp = result; rp != NULL; rp = rp->ai_next) {
                 sockfd = socket(rp->ai_family, rp->ai_socktype, rp->ai_protocol);
-                if (sockfd < 0) continue;
+                if (sockfd < 0) {
+                    int err = errno;   // capture first; logging can clobber errno
+                    if (err == ENOBUFS) {
+                        ESP_LOGE(tag, "socket() failed: LWIP has no free TCP sockets available (ENOBUFS) (max %d)", CONFIG_LWIP_MAX_ACTIVE_TCP);
+                    } else {
+                        ESP_LOGE(tag, "socket() failed: errno %d", err);
+                    }
+                    continue;
+                }
 
                 // Set socket to non-blocking mode for timeout support
                 int flags = fcntl(sockfd, F_GETFL, 0);
@@ -2609,7 +2617,11 @@ class NATS {
         }
 
         void disconnect() {
+#if FIX_TLS_DISCONNECT
             bool was_connected = connected;
+#else
+            if (!connected && (transport == NULL || !transport->is_connected())) return;
+#endif
 
             last_reconnect_attempt = NATSUtil::millis();
             connected = false;
@@ -2625,7 +2637,12 @@ class NATS {
             if (transport != NULL) {
                 transport->disconnect();
                 // Don't clean up legacy resources when using transport
-                if (was_connected && on_disconnect != NULL) on_disconnect();
+                if (
+#if FIX_TLS_DISCONNECT
+                    was_connected && 
+#endif
+                    on_disconnect != NULL
+                ) on_disconnect();
                 return;
             }
 
@@ -2649,7 +2666,12 @@ class NATS {
             // Subscriptions are preserved so they can be restored on reconnect.
             // Use shutdown() or the destructor to fully clean up subscriptions.
 
-            if (was_connected && on_disconnect != NULL) on_disconnect();
+            if (
+#if FIX_TLS_DISCONNECT
+                was_connected && 
+#endif
+                on_disconnect != NULL
+            ) on_disconnect();
         }
 
         // Fully close the connection and clean up all subscriptions

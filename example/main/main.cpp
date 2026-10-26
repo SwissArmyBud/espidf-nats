@@ -27,6 +27,7 @@
 #include "esp_log.h"
 #include "nvs_flash.h"
 #include "driver/gpio.h"
+#define FIX_TLS_DISCONNECT 0 // DEMO - Set to 0 (nofix) or 1 (fix) for different library behavior
 #include "espidf_nats.h"
 
 static const char* TAG = "nats_test";
@@ -40,7 +41,7 @@ static const char* TAG = "nats_test";
 #define NATS_PORT      4223                     // JetStream port (from docker-compose)
 
 // TLS Configuration
-#define NATS_USE_TLS   0                // Set to 1 to enable TLS
+#define NATS_USE_TLS   1                // Set to 1 to enable TLS
 #define NATS_USE_MTLS  0                // Set to 1 when TLS is enabled to also enable mTLS
 #define NATS_TLS_PORT  4224             // TLS port (from docker-compose)
 
@@ -1013,8 +1014,7 @@ static void nats_test_task(void* arg)
     tls_config.enabled = true;
     tls_config.ca_cert = ca_cert_start;
     tls_config.ca_cert_len = ca_cert_length;
-    // Don't set server_name for IP connections - SAN will be checked for IP match
-    // tls_config.server_name = NATS_SERVER;
+    tls_config.skip_cert_verification = false; // Forces CA validation failure without IP SAN for demo - desired behavior
 #if NATS_USE_MTLS
     tls_config.client_cert = client_cert_start;
     tls_config.client_cert_len = client_cert_length;
@@ -1039,10 +1039,20 @@ static void nats_test_task(void* arg)
     nats->on_error = []() { ESP_LOGE(TAG, "⚠️  NATS error: %s", nats->last_error_string()); };
 
     // Connect
-    if (!nats->connect()) {
-        ESP_LOGE(TAG, "Failed to connect: %s", nats->last_error_string());
-        vTaskDelete(NULL);
-        return;
+    uint8_t connectionCounter = 0;
+    while (!nats->connect()) {
+        connectionCounter++;
+        ESP_LOGE(TAG, "Attempt %d failed to connect: %s", connectionCounter, nats->last_error_string());
+
+        vTaskDelay(pdMS_TO_TICKS(1000));
+        // Socket starvation occurs regardless of configured initial count, as long as the (gte) value is above that
+        // Default CONFIG_LWIP_MAX_ACTIVE_TCP -> 16
+        // Plus 4 extras for starvation PoC, only "1" is necessary if server connections are consistent and TLS is the only failure
+        if(connectionCounter >= CONFIG_LWIP_MAX_ACTIVE_TCP + 4){
+            ESP_LOGE(TAG, "Exiting after meeting threshold for LWIP behavior probing.");
+            vTaskDelete(NULL);
+            return;
+        }
     }
 
     // Process connection handshake
@@ -1183,6 +1193,7 @@ extern "C" void app_main(void)
 {
     ESP_LOGI(TAG, "ESP-IDF NATS Client - Comprehensive Test");
     ESP_LOGI(TAG, "ESP-IDF Version: %s", esp_get_idf_version());
+    ESP_LOGI(TAG, "[NATS Client FIX_TLS_DISCONNECT -> %d]", FIX_TLS_DISCONNECT);
 
     // Initialize NVS
     esp_err_t ret = nvs_flash_init();
