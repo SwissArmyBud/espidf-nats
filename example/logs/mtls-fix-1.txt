@@ -1,0 +1,252 @@
+
+I (23) boot: ESP-IDF v6.0.1-dirty 2nd stage bootloader
+I (23) boot: compile time Oct 25 2026 16:21:54
+I (24) boot: chip revision: v0.2
+I (24) boot: efuse block revision: v0.3
+I (27) boot.esp32c6: SPI Speed      : 80MHz
+I (31) boot.esp32c6: SPI Mode       : DIO
+I (35) boot.esp32c6: SPI Flash Size : 2MB
+I (38) boot: Enabling RNG early entropy source...
+I (43) boot: Partition Table:
+I (45) boot: ## Label            Usage          Type ST Offset   Length
+I (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (58) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (65) boot:  2 factory          factory app      00 00 00010000 00177000
+I (71) boot: End of partition table
+I (75) esp_image: segment 0: paddr=00010020 vaddr=420c8020 size=25fe8h (155624) map
+I (111) esp_image: segment 1: paddr=00036010 vaddr=40800000 size=02008h (  8200) load
+I (114) esp_image: segment 2: paddr=00038020 vaddr=42000020 size=c2cf0h (797936) map
+I (265) esp_image: segment 3: paddr=000fad18 vaddr=40802008 size=16104h ( 90372) load
+I (284) esp_image: segment 4: paddr=00110e24 vaddr=40818110 size=03b4ch ( 15180) load
+I (294) boot: Loaded app from partition at offset 0x10000
+I (295) boot: Disabling RNG early entropy source...
+I (304) cpu_start: Unicore app
+I (313) cpu_start: GPIO 17 and 16 are used as console UART I/O pins
+I (313) cpu_start: Pro cpu start user code
+I (313) cpu_start: cpu freq: 160000000 Hz
+I (315) app_init: Application information:
+I (319) app_init: Project name:     nats-test-app
+I (323) app_init: App version:      v1.4.0-3-g79cec5f-dirty
+I (329) app_init: Compile time:     Oct 26 2026 13:29:02
+I (334) app_init: ELF file SHA256:  b66bf5391...
+I (338) app_init: ESP-IDF:          v6.0.1-dirty
+I (342) efuse_init: Min chip rev:     v0.0
+I (346) efuse_init: Max chip rev:     v0.99 
+I (350) efuse_init: Chip rev:         v0.2
+I (354) heap_init: Initializing. RAM available for dynamic allocation:
+I (360) heap_init: At 408218C0 len 0005AD50 (363 KiB): RAM
+I (365) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM
+I (371) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM
+I (377) spi_flash: detected chip: generic
+I (380) spi_flash: flash io: dio
+W (383) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (395) sleep_gpio: Configure to isolate all GPIO pins in sleep state
+I (401) sleep_gpio: Enable automatic switching of GPIO sleep configuration
+I (416) main_task: Started on CPU0
+I (418) main_task: Calling app_main()
+I (422) nats_test: ESP-IDF NATS Client - Comprehensive Test
+I (427) nats_test: ESP-IDF Version: v6.0.1-dirty
+I (431) nats_test: [NATS Client FIX_MTLS_ATTACHMENT -> 1]
+I (450) pp: pp rom version: 5b8dcfa
+I (451) net80211: net80211 rom version: 5b8dcfa
+I (452) wifi:wifi driver task: 40828ec8, prio:23, stack:6656, core=0
+I (460) wifi:wifi firmware version: b37c951
+I (461) wifi:wifi certification version: v7.0
+I (461) wifi:config NVS flash: enabled
+I (464) wifi:config nano formatting: disabled
+I (468) wifi:mac_version:HAL_MAC_ESP32AX_761,ut_version:N, band mode:0x1
+I (475) wifi:Init data frame dynamic rx buffer num: 32
+I (480) wifi:Init static rx mgmt buffer num: 5
+I (484) wifi:Init management short buffer num: 32
+I (488) wifi:Init dynamic tx buffer num: 32
+I (492) wifi:Init static tx FG buffer num: 2
+I (496) wifi:Init static rx buffer size: 1700 (rxctrl:92, csi:512)
+I (502) wifi:Init static rx buffer num: 10
+I (506) wifi:Init dynamic rx buffer num: 32
+I (510) wifi_init: rx ba win: 6
+I (513) wifi_init: accept mbox: 6
+I (516) wifi_init: tcpip mbox: 32
+I (519) wifi_init: udp mbox: 6
+I (521) wifi_init: tcp mbox: 6
+I (524) wifi_init: tcp tx win: 5760
+I (527) wifi_init: tcp rx win: 5760
+I (531) wifi_init: tcp mss: 1440
+I (534) wifi_init: WiFi IRAM OP enabled
+I (537) wifi_init: WiFi RX IRAM OP enabled
+I (541) wifi_init: WiFi SLP IRAM OP enabled
+I (546) phy_init: phy_version 343,b513b46,Nov 14 2025,16:34:12
+I (635) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).
+
+I (636) wifi:mode : sta (10:51:db:1c:b7:3c)
+I (637) wifi:enable tsf
+I (641) nats_test: WiFi initialization completed
+I (642) nats_test: Waiting for WiFi connection...
+I (646) wifi:new:<3,0>, old:<1,0>, ap:<255,255>, sta:<3,0>, prof:1, snd_ch_cfg:0x0
+I (654) wifi:(connect)dot11_authmode:0x3, pairwise_cipher:0x3, group_cipher:0x1
+I (661) wifi:state: init -> auth (0xb0)
+I (665) main_task: Returned from app_main()
+I (667) wifi:state: auth -> assoc (0x0)
+I (676) wifi:state: assoc -> run (0x10)
+I (677) wifi:(trc)phytype:CBW20-SGI, snr:47, maxRate:144, highestRateIdx:0
+W (682) wifi:(trc)band:2G, phymode:3, highestRateIdx:0, lowestRateIdx:11, dataSchedTableSize:14
+I (690) wifi:(trc)band:2G, rate(S-MCS7, rateIdx:0), ampdu(rate:S-MCS7, schedIdx(0, stop:8)), snr:47, ampduState:wait operational
+I (701) wifi:ifidx:0, rssi:-50, nf:-97, phytype(0x3, CBW20-SGI), phymode(0x3, 11bgn), max_rate:144, he:0, vht:0, ht:1
+I (712) wifi:(ht)max.RxAMPDULenExponent:3(65535 bytes), MMSS:6(8 us)
+I (732) wifi:connected with <XXXXXXXXXX>, aid = 2, channel 3, BW20, bssid = <XXXXXXXXXX>
+I (732) wifi:security: WPA2-PSK, phy: bgn, rssi: -50, cipher(pairwise:0x3, group:0x1), pmf:0
+I (738) wifi:pm start, type: 1, twt_start:0
+
+I (741) wifi:pm start, type:1, aid:0x2, trans-BSSID:<XXXXXXXXXX>, BSSID[5]:0xb0, mbssid(max-indicator:0, index:0), he:0
+I (752) wifi:dp: 1, bi: 104448, li: 2, scale listen interval from 307200 us to 208896 us
+I (760) wifi:set rx beacon pti, rx_bcn_pti: 10, bcn_timeout: 25000, mt_pti: 10, mt_time: 10000
+I (768) wifi:[ADDBA]TX addba request, tid:0, dialogtoken:1, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x0)
+I (779) wifi:[ADDBA]TX addba request, tid:7, dialogtoken:2, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x20)
+I (790) wifi:[ADDBA]TX addba request, tid:5, dialogtoken:3, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x0)
+W (801) wifi:<ba-add>idx:0, ifx:0, tid:0, TAHI:0x100b082, TALO:0xd39d3318, (ssn:71, win:64, cur_ssn:71), CONF:0xc0000005
+I (811) wifi:AP's beacon interval = 104448 us, DTIM period = 2
+I (817) wifi:[ADDBA]RX addba response, status:0, tid:0/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64
+I (826) wifi:[ADDBA]RX addba response, status:0, tid:7/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64
+I (835) wifi:[ADDBA]RX addba response, status:0, tid:5/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64
+I (1851) esp_netif_handlers: sta ip: <XXXXXXXXXX>, mask: <XXXXXXXXXX>, gw: <XXXXXXXXXX>
+I (1851) nats_test: WiFi connected, IP: <XXXXXXXXXX>
+I (1853) nats_test: Creating NATS client...
+W (1857) espidf-nats: TLS enabled without server_name - SNI will use hostname from connection
+I (1865) nats_test: Connecting with TLS to NATS server <XXXXXXXXXX>:4224...
+I (1872) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (1948) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (1970) espidf-nats: Server max_payload: 1048576 bytes
+I (1970) espidf-nats: Server requires TLS
+I (1971) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (1982) espidf-nats: Attached mTLS certificate to client session
+I (1983) espidf-nats: Starting TLS handshake...
+I (2565) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (2567) nats_test: ✅ Connected to NATS
+I (5749) nats_test: 
+
+I (5749) nats_test: ╔════════════════════════════════════════════════════════╗
+I (5757) nats_test: ║  ESP-IDF NATS CLIENT - COMPREHENSIVE FEATURE TEST      ║
+I (5764) nats_test: ╚════════════════════════════════════════════════════════╝
+I (5781) nats_test: 
+
+I (5783) nats_test: ========== BASIC FEATURES ==========
+I (5788) nats_test: 
+========== TEST: Basic Pub/Sub ==========
+I (6002) nats_test: Received: Hello NATS!
+I (6003) nats_test: ✅ PASS: Basic Pub/Sub
+I (6503) nats_test: 
+========== TEST: Request/Reply ==========
+I (6712) nats_test: Echo request: ping
+I (6817) nats_test: Request response: ping
+I (6818) nats_test: ✅ PASS: Request/Reply
+I (7318) nats_test: 
+========== TEST: Headers (HPUB/HMSG) ==========
+I (7622) nats_test: Received with headers - data: test payload
+I (7623) nats_test: Headers: NATS/1.0
+
+X-Test: true
+
+
+
+
+I (7623) nats_test: ✅ PASS: Headers
+I (8126) nats_test: 
+========== JETSTREAM FEATURES ==========
+I (8126) nats_test: 
+========== TEST: JetStream Stream Create ==========
+I (8185) nats_test: Stream response: 
+I (8186) nats_test: ✅ PASS: JetStream Stream Create
+I (8686) nats_test: 
+========== TEST: JetStream Publish with ACK ==========
+I (8742) nats_test: JetStream ACK: 
+I (8743) nats_test: ✅ PASS: JetStream Publish
+I (9243) nats_test: 
+========== TEST: JetStream Consumer Create ==========
+I (9300) nats_test: Consumer response: 
+I (9301) nats_test: ✅ PASS: JetStream Consumer Create
+I (9801) nats_test: 
+========== TEST: JetStream Pull ==========
+I (9858) nats_test: Pulled message: 
+I (14809) nats_test: ✅ PASS: JetStream Pull
+I (15309) nats_test: 
+========== KEY-VALUE STORE ==========
+I (15309) nats_test: 
+========== TEST: KV Bucket Create ==========
+I (15367) nats_test: KV bucket response: 
+I (15368) nats_test: ✅ PASS: KV Bucket Create
+I (15868) nats_test: 
+========== TEST: KV Put ==========
+I (15925) nats_test: KV put ACK: 
+I (15926) nats_test: ✅ PASS: KV Put
+I (16426) nats_test: 
+========== TEST: KV Get ==========
+I (16533) nats_test: KV get response: 
+I (16534) nats_test: ✅ PASS: KV Get
+I (17034) nats_test: 
+========== OBJECT STORE ==========
+I (17034) nats_test: 
+========== TEST: Object Store Bucket Create ==========
+I (17092) nats_test: Object bucket response: 
+I (17093) nats_test: ✅ PASS: Object Bucket Create
+I (17593) nats_test: 
+========== TEST: Object Store Put ==========
+I (18189) espidf-nats: Server max_payload: 1048576 bytes
+I (18190) espidf-nats: Server requires TLS
+I (18190) espidf-nats: Server requires TLS - already secured (native TLS)
+I (18245) nats_test: Object put ACK: 
+I (18246) nats_test: ✅ PASS: Object Put (250 KB with chunking)
+I (18746) nats_test: 
+========== TEST: Object Store Get Info ==========
+I (18803) nats_test: Object info: 
+I (18804) nats_test: ✅ PASS: Object Get Info
+I (19304) nats_test: 
+========== ADVANCED FEATURES ==========
+I (19304) nats_test: 
+========== TEST: Ordered Consumer ==========
+I (19411) nats_test: Ordered consumer response: 
+I (19412) nats_test: ✅ PASS: Ordered Consumer
+I (19912) nats_test: 
+========== TEST: JetStream Account Info ==========
+I (20019) nats_test: Account info: 
+I (20020) nats_test: ✅ PASS: Account Info
+I (20520) nats_test: 
+========== TEST: Connection Metrics ==========
+I (20520) nats_test: Connection Metrics:
+I (20520) nats_test:   Messages sent: 18
+I (20522) nats_test:   Messages received: 16
+I (20526) nats_test:   Bytes sent: 253213
+I (20530) nats_test:   Bytes received: 842
+I (20534) nats_test:   Reconnections: 0
+I (20537) nats_test:   Uptime: 18572 ms
+I (20541) nats_test: ✅ PASS: Connection Metrics
+I (21045) nats_test: 
+========== TEST: Reconnection with Subscription Restoration ==========
+I (21048) nats_test: Subscribed to test.reconnect (sid=16)
+I (21148) nats_test: Forcing disconnect...
+W (21150) nats_test: ❌ Disconnected from NATS
+I (21650) nats_test: Reconnecting...
+I (21650) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (21656) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (21700) espidf-nats: Server max_payload: 1048576 bytes
+I (21700) espidf-nats: Server requires TLS
+I (21701) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (21712) espidf-nats: Attached mTLS certificate to client session
+I (21713) espidf-nats: Starting TLS handshake...
+I (22274) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (22277) espidf-nats: Restored 4 subscriptions after reconnect
+I (22277) nats_test: ✅ Connected to NATS
+I (22289) nats_test: Reconnected! Subscriptions should be restored.
+I (22839) nats_test: Reconnect test msg: Hello after reconnect!
+I (22840) nats_test: ✅ PASS: Reconnection with Subscription Restoration
+I (23343) nats_test: 
+
+I (23343) nats_test: ╔════════════════════════════════════════════════════════╗
+I (23351) nats_test: ║                    TEST SUMMARY                        ║
+I (23358) nats_test: ╚════════════════════════════════════════════════════════╝
+I (23375) nats_test:   ✅ Passed: 17
+I (23379) nats_test:   ❌ Failed: 0
+I (23382) nats_test:   Total:  17
+I (23385) nats_test: 
+
+I (23387) nats_test: 🎉 ALL TESTS PASSED! 🎉
+I (23392) nats_test: Keeping connection alive. Monitoring metrics every 30s...
+I (53402) nats_test: Metrics: Msgs 19/17, Bytes 253504/864, Uptime 31746 ms

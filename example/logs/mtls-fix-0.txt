@@ -1,0 +1,1090 @@
+
+I (24) boot: ESP-IDF v6.0.1-dirty 2nd stage bootloader
+I (25) boot: compile time Oct 25 2026 16:21:54
+I (25) boot: chip revision: v0.2
+I (26) boot: efuse block revision: v0.3
+I (29) boot.esp32c6: SPI Speed      : 80MHz
+I (32) boot.esp32c6: SPI Mode       : DIO
+I (36) boot.esp32c6: SPI Flash Size : 2MB
+I (40) boot: Enabling RNG early entropy source...
+I (44) boot: Partition Table:
+I (47) boot: ## Label            Usage          Type ST Offset   Length
+I (53) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (60) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (66) boot:  2 factory          factory app      00 00 00010000 00177000
+I (73) boot: End of partition table
+I (76) esp_image: segment 0: paddr=00010020 vaddr=420c8020 size=25d28h (154920) map
+I (113) esp_image: segment 1: paddr=00035d50 vaddr=40800000 size=022c8h (  8904) load
+I (116) esp_image: segment 2: paddr=00038020 vaddr=42000020 size=c1f28h (794408) map
+I (265) esp_image: segment 3: paddr=000f9f50 vaddr=408022c8 size=15e44h ( 89668) load
+I (285) esp_image: segment 4: paddr=0010fd9c vaddr=40818110 size=03b4ch ( 15180) load
+I (295) boot: Loaded app from partition at offset 0x10000
+I (295) boot: Disabling RNG early entropy source...
+I (305) cpu_start: Unicore app
+I (313) cpu_start: GPIO 17 and 16 are used as console UART I/O pins
+I (314) cpu_start: Pro cpu start user code
+I (314) cpu_start: cpu freq: 160000000 Hz
+I (316) app_init: Application information:
+I (319) app_init: Project name:     nats-test-app
+I (324) app_init: App version:      v1.4.0-3-g79cec5f-dirty
+I (329) app_init: Compile time:     Oct 26 2026 13:29:02
+I (334) app_init: ELF file SHA256:  f3a34fa47...
+I (338) app_init: ESP-IDF:          v6.0.1-dirty
+I (343) efuse_init: Min chip rev:     v0.0
+I (347) efuse_init: Max chip rev:     v0.99 
+I (351) efuse_init: Chip rev:         v0.2
+I (355) heap_init: Initializing. RAM available for dynamic allocation:
+I (361) heap_init: At 408218C0 len 0005AD50 (363 KiB): RAM
+I (366) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM
+I (371) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM
+I (377) spi_flash: detected chip: generic
+I (380) spi_flash: flash io: dio
+W (383) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (396) sleep_gpio: Configure to isolate all GPIO pins in sleep state
+I (402) sleep_gpio: Enable automatic switching of GPIO sleep configuration
+I (417) main_task: Started on CPU0
+I (419) main_task: Calling app_main()
+I (423) nats_test: ESP-IDF NATS Client - Comprehensive Test
+I (428) nats_test: ESP-IDF Version: v6.0.1-dirty
+I (432) nats_test: [NATS Client FIX_MTLS_ATTACHMENT -> 0]
+I (451) pp: pp rom version: 5b8dcfa
+I (452) net80211: net80211 rom version: 5b8dcfa
+I (453) wifi:wifi driver task: 40828ec8, prio:23, stack:6656, core=0
+I (461) wifi:wifi firmware version: b37c951
+I (462) wifi:wifi certification version: v7.0
+I (462) wifi:config NVS flash: enabled
+I (465) wifi:config nano formatting: disabled
+I (469) wifi:mac_version:HAL_MAC_ESP32AX_761,ut_version:N, band mode:0x1
+I (476) wifi:Init data frame dynamic rx buffer num: 32
+I (481) wifi:Init static rx mgmt buffer num: 5
+I (485) wifi:Init management short buffer num: 32
+I (489) wifi:Init dynamic tx buffer num: 32
+I (493) wifi:Init static tx FG buffer num: 2
+I (497) wifi:Init static rx buffer size: 1700 (rxctrl:92, csi:512)
+I (503) wifi:Init static rx buffer num: 10
+I (507) wifi:Init dynamic rx buffer num: 32
+I (511) wifi_init: rx ba win: 6
+I (514) wifi_init: accept mbox: 6
+I (517) wifi_init: tcpip mbox: 32
+I (520) wifi_init: udp mbox: 6
+I (522) wifi_init: tcp mbox: 6
+I (525) wifi_init: tcp tx win: 5760
+I (528) wifi_init: tcp rx win: 5760
+I (532) wifi_init: tcp mss: 1440
+I (535) wifi_init: WiFi IRAM OP enabled
+I (538) wifi_init: WiFi RX IRAM OP enabled
+I (542) wifi_init: WiFi SLP IRAM OP enabled
+I (547) phy_init: phy_version 343,b513b46,Nov 14 2025,16:34:12
+I (634) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).
+
+I (635) wifi:mode : sta (10:51:db:1c:b7:3c)
+I (635) wifi:enable tsf
+I (639) nats_test: WiFi initialization completed
+I (640) nats_test: Waiting for WiFi connection...
+I (645) wifi:new:<3,0>, old:<1,0>, ap:<255,255>, sta:<3,0>, prof:1, snd_ch_cfg:0x0
+I (653) wifi:(connect)dot11_authmode:0x3, pairwise_cipher:0x3, group_cipher:0x1
+I (659) wifi:state: init -> auth (0xb0)
+I (663) main_task: Returned from app_main()
+I (666) wifi:state: auth -> assoc (0x0)
+I (676) wifi:state: assoc -> run (0x10)
+I (677) wifi:(trc)phytype:CBW20-SGI, snr:51, maxRate:144, highestRateIdx:0
+W (680) wifi:(trc)band:2G, phymode:3, highestRateIdx:0, lowestRateIdx:11, dataSchedTableSize:14
+I (689) wifi:(trc)band:2G, rate(S-MCS7, rateIdx:0), ampdu(rate:S-MCS7, schedIdx(0, stop:8)), snr:51, ampduState:wait operational
+I (700) wifi:ifidx:0, rssi:-46, nf:-97, phytype(0x3, CBW20-SGI), phymode(0x3, 11bgn), max_rate:144, he:0, vht:0, ht:1
+I (710) wifi:(ht)max.RxAMPDULenExponent:3(65535 bytes), MMSS:6(8 us)
+I (728) wifi:connected with <XXXXXXXXXX>, aid = 2, channel 3, BW20, bssid = <XXXXXXXXXX>
+I (729) wifi:security: WPA2-PSK, phy: bgn, rssi: -46, cipher(pairwise:0x3, group:0x1), pmf:0
+I (735) wifi:pm start, type: 1, twt_start:0
+
+I (737) wifi:pm start, type:1, aid:0x2, trans-BSSID:<XXXXXXXXXX>, BSSID[5]:0xb0, mbssid(max-indicator:0, index:0), he:0
+I (748) wifi:dp: 1, bi: 104448, li: 2, scale listen interval from 307200 us to 208896 us
+I (756) wifi:set rx beacon pti, rx_bcn_pti: 10, bcn_timeout: 25000, mt_pti: 10, mt_time: 10000
+I (765) wifi:[ADDBA]TX addba request, tid:0, dialogtoken:1, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x0)
+I (776) wifi:[ADDBA]TX addba request, tid:7, dialogtoken:2, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x20)
+I (786) wifi:[ADDBA]TX addba request, tid:5, dialogtoken:3, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x0)
+W (797) wifi:<ba-add>idx:0, ifx:0, tid:0, TAHI:0x100b082, TALO:0xd39d3318, (ssn:73, win:64, cur_ssn:73), CONF:0xc0000005
+I (808) wifi:[ADDBA]RX addba response, status:0, tid:0/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64
+I (817) wifi:[ADDBA]RX addba response, status:0, tid:7/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64
+I (826) wifi:[ADDBA]RX addba response, status:0, tid:5/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64
+I (835) wifi:AP's beacon interval = 104448 us, DTIM period = 2
+I (1847) esp_netif_handlers: sta ip: <XXXXXXXXXX>, mask: <XXXXXXXXXX>, gw: <XXXXXXXXXX>
+I (1848) nats_test: WiFi connected, IP: <XXXXXXXXXX>
+I (1849) nats_test: Creating NATS client...
+W (1853) espidf-nats: TLS enabled without server_name - SNI will use hostname from connection
+I (1861) nats_test: Connecting with TLS to NATS server <XXXXXXXXXX>:4224...
+I (1868) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (2462) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (2484) espidf-nats: Server max_payload: 1048576 bytes
+I (2484) espidf-nats: Server requires TLS
+I (2485) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (2493) espidf-nats: Starting TLS handshake...
+I (3065) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (3067) nats_test: ✅ Connected to NATS
+E (3149) espidf-nats: Read error: -30592
+W (3151) nats_test: ❌ Disconnected from NATS
+I (4081) nats_test: 
+
+I (4081) nats_test: ╔════════════════════════════════════════════════════════╗
+I (4089) nats_test: ║  ESP-IDF NATS CLIENT - COMPREHENSIVE FEATURE TEST      ║
+I (4096) nats_test: ╚════════════════════════════════════════════════════════╝
+I (4113) nats_test: 
+
+I (4115) nats_test: ========== BASIC FEATURES ==========
+I (4120) nats_test: 
+========== TEST: Basic Pub/Sub ==========
+I (4226) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (4236) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (4268) espidf-nats: Server max_payload: 1048576 bytes
+I (4268) espidf-nats: Server requires TLS
+I (4268) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (4277) espidf-nats: Starting TLS handshake...
+I (4829) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (4831) nats_test: ✅ Connected to NATS
+E (4943) espidf-nats: Read error: -30592
+W (4945) nats_test: ❌ Disconnected from NATS
+I (5945) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (5962) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (5983) espidf-nats: Server max_payload: 1048576 bytes
+I (5983) espidf-nats: Server requires TLS
+I (5983) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (5992) espidf-nats: Starting TLS handshake...
+I (6540) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (6542) nats_test: ✅ Connected to NATS
+E (6653) espidf-nats: Read error: -30592
+W (6656) nats_test: ❌ Disconnected from NATS
+I (7656) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (7662) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (7680) espidf-nats: Server max_payload: 1048576 bytes
+I (7680) espidf-nats: Server requires TLS
+I (7680) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (7689) espidf-nats: Starting TLS handshake...
+I (8241) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (8243) nats_test: ✅ Connected to NATS
+E (8354) espidf-nats: Read error: -30592
+W (8356) nats_test: ❌ Disconnected from NATS
+I (9357) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (9366) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (9386) espidf-nats: Server max_payload: 1048576 bytes
+I (9386) espidf-nats: Server requires TLS
+I (9387) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (9395) espidf-nats: Starting TLS handshake...
+I (9941) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (9942) nats_test: ✅ Connected to NATS
+E (10054) espidf-nats: Read error: -30592
+W (10056) nats_test: ❌ Disconnected from NATS
+I (11057) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (11062) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (11079) espidf-nats: Server max_payload: 1048576 bytes
+I (11079) espidf-nats: Server requires TLS
+I (11080) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (11088) espidf-nats: Starting TLS handshake...
+I (11633) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (11634) nats_test: ✅ Connected to NATS
+E (11745) espidf-nats: Read error: -30592
+W (11748) nats_test: ❌ Disconnected from NATS
+E (12248) nats_test: ❌ FAIL: Basic Pub/Sub - no message received
+I (12748) nats_test: 
+========== TEST: Request/Reply ==========
+I (12848) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (12854) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (12870) espidf-nats: Server max_payload: 1048576 bytes
+I (12870) espidf-nats: Server requires TLS
+I (12870) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (12879) espidf-nats: Starting TLS handshake...
+I (13420) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (13422) nats_test: ✅ Connected to NATS
+E (13533) espidf-nats: Read error: -30592
+W (13535) nats_test: ❌ Disconnected from NATS
+I (14536) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (14545) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (14566) espidf-nats: Server max_payload: 1048576 bytes
+I (14566) espidf-nats: Server requires TLS
+I (14566) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (14575) espidf-nats: Starting TLS handshake...
+I (15123) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (15125) nats_test: ✅ Connected to NATS
+E (15236) espidf-nats: Read error: -30592
+W (15238) nats_test: ❌ Disconnected from NATS
+I (16239) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (16245) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (16263) espidf-nats: Server max_payload: 1048576 bytes
+I (16263) espidf-nats: Server requires TLS
+I (16264) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (16272) espidf-nats: Starting TLS handshake...
+I (16815) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (16817) nats_test: ✅ Connected to NATS
+E (16928) espidf-nats: Read error: -30592
+W (16930) nats_test: ❌ Disconnected from NATS
+I (17930) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (17935) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (17951) espidf-nats: Server max_payload: 1048576 bytes
+I (17951) espidf-nats: Server requires TLS
+I (17951) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (17960) espidf-nats: Starting TLS handshake...
+I (18523) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (18524) nats_test: ✅ Connected to NATS
+E (18636) espidf-nats: Read error: -30592
+W (18638) nats_test: ❌ Disconnected from NATS
+I (19638) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (19644) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (19662) espidf-nats: Server max_payload: 1048576 bytes
+I (19663) espidf-nats: Server requires TLS
+I (19663) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (19672) espidf-nats: Starting TLS handshake...
+I (20235) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (20236) nats_test: ✅ Connected to NATS
+E (20348) espidf-nats: Read error: -30592
+W (20351) nats_test: ❌ Disconnected from NATS
+E (20851) nats_test: ❌ FAIL: Request/Reply - no response
+I (21351) nats_test: 
+========== TEST: Headers (HPUB/HMSG) ==========
+I (21451) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (21455) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (21478) espidf-nats: Server max_payload: 1048576 bytes
+I (21478) espidf-nats: Server requires TLS
+I (21478) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (21487) espidf-nats: Starting TLS handshake...
+I (22037) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (22039) nats_test: ✅ Connected to NATS
+E (22151) espidf-nats: Read error: -30592
+W (22153) nats_test: ❌ Disconnected from NATS
+I (23154) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (23178) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (23196) espidf-nats: Server max_payload: 1048576 bytes
+I (23197) espidf-nats: Server requires TLS
+I (23197) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (23207) espidf-nats: Starting TLS handshake...
+I (23764) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (23766) nats_test: ✅ Connected to NATS
+E (23877) espidf-nats: Read error: -30592
+W (23879) nats_test: ❌ Disconnected from NATS
+I (24880) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (24886) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (24904) espidf-nats: Server max_payload: 1048576 bytes
+I (24905) espidf-nats: Server requires TLS
+I (24905) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (24913) espidf-nats: Starting TLS handshake...
+I (25458) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (25459) nats_test: ✅ Connected to NATS
+E (25571) espidf-nats: Read error: -30592
+W (25573) nats_test: ❌ Disconnected from NATS
+I (26574) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (26579) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (26598) espidf-nats: Server max_payload: 1048576 bytes
+I (26598) espidf-nats: Server requires TLS
+I (26598) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (26607) espidf-nats: Starting TLS handshake...
+I (27153) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (27155) nats_test: ✅ Connected to NATS
+E (27266) espidf-nats: Read error: -30592
+W (27269) nats_test: ❌ Disconnected from NATS
+I (28269) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (28276) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (28295) espidf-nats: Server max_payload: 1048576 bytes
+I (28296) espidf-nats: Server requires TLS
+I (28296) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (28306) espidf-nats: Starting TLS handshake...
+I (28852) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (28854) nats_test: ✅ Connected to NATS
+E (28965) espidf-nats: Read error: -30592
+W (28967) nats_test: ❌ Disconnected from NATS
+E (29468) nats_test: ❌ FAIL: Headers - not received
+I (29968) nats_test: 
+========== JETSTREAM FEATURES ==========
+I (29968) nats_test: 
+========== TEST: JetStream Stream Create ==========
+I (29969) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (29981) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (30000) espidf-nats: Server max_payload: 1048576 bytes
+I (30000) espidf-nats: Server requires TLS
+I (30001) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (30009) espidf-nats: Starting TLS handshake...
+I (30573) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (30575) nats_test: ✅ Connected to NATS
+E (30636) espidf-nats: Read error: -30592
+W (30638) nats_test: ❌ Disconnected from NATS
+I (31638) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (31643) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (31660) espidf-nats: Server max_payload: 1048576 bytes
+I (31661) espidf-nats: Server requires TLS
+I (31661) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (31670) espidf-nats: Starting TLS handshake...
+I (32227) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (32228) nats_test: ✅ Connected to NATS
+E (32290) espidf-nats: Read error: -30592
+W (32292) nats_test: ❌ Disconnected from NATS
+I (33292) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (33298) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (33338) espidf-nats: Server max_payload: 1048576 bytes
+I (33338) espidf-nats: Server requires TLS
+I (33339) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (33347) espidf-nats: Starting TLS handshake...
+I (33911) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (33913) nats_test: ✅ Connected to NATS
+E (33974) espidf-nats: Read error: -30592
+W (33976) nats_test: ❌ Disconnected from NATS
+I (34976) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (34981) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (34998) espidf-nats: Server max_payload: 1048576 bytes
+I (34998) espidf-nats: Server requires TLS
+I (34998) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (35007) espidf-nats: Starting TLS handshake...
+I (35562) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (35564) nats_test: ✅ Connected to NATS
+E (35625) espidf-nats: Read error: -30592
+W (35627) nats_test: ❌ Disconnected from NATS
+I (36627) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (36633) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (36651) espidf-nats: Server max_payload: 1048576 bytes
+I (36652) espidf-nats: Server requires TLS
+I (36652) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (36661) espidf-nats: Starting TLS handshake...
+I (37215) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (37217) nats_test: ✅ Connected to NATS
+E (37278) espidf-nats: Read error: -30592
+W (37280) nats_test: ❌ Disconnected from NATS
+E (38030) nats_test: ❌ FAIL: JetStream Stream Create
+I (38530) nats_test: 
+========== TEST: JetStream Publish with ACK ==========
+I (38530) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (38539) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (38562) espidf-nats: Server max_payload: 1048576 bytes
+I (38562) espidf-nats: Server requires TLS
+I (38563) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (38571) espidf-nats: Starting TLS handshake...
+I (39118) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (39119) nats_test: ✅ Connected to NATS
+E (39181) espidf-nats: Read error: -30592
+W (39183) nats_test: ❌ Disconnected from NATS
+I (40183) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (40189) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (40206) espidf-nats: Server max_payload: 1048576 bytes
+I (40207) espidf-nats: Server requires TLS
+I (40207) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (40216) espidf-nats: Starting TLS handshake...
+I (40758) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (40759) nats_test: ✅ Connected to NATS
+E (40821) espidf-nats: Read error: -30592
+W (40823) nats_test: ❌ Disconnected from NATS
+I (41823) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (41831) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (41847) espidf-nats: Server max_payload: 1048576 bytes
+I (41847) espidf-nats: Server requires TLS
+I (41847) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (41856) espidf-nats: Starting TLS handshake...
+I (42418) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (42419) nats_test: ✅ Connected to NATS
+E (42480) espidf-nats: Read error: -30592
+W (42482) nats_test: ❌ Disconnected from NATS
+I (43482) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (43487) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (43505) espidf-nats: Server max_payload: 1048576 bytes
+I (43506) espidf-nats: Server requires TLS
+I (43506) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (43515) espidf-nats: Starting TLS handshake...
+I (44061) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (44062) nats_test: ✅ Connected to NATS
+E (44123) espidf-nats: Read error: -30592
+W (44125) nats_test: ❌ Disconnected from NATS
+I (45125) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (45131) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (45149) espidf-nats: Server max_payload: 1048576 bytes
+I (45149) espidf-nats: Server requires TLS
+I (45150) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (45158) espidf-nats: Starting TLS handshake...
+I (45719) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (45721) nats_test: ✅ Connected to NATS
+E (45832) espidf-nats: Read error: -30592
+W (45834) nats_test: ❌ Disconnected from NATS
+E (46534) nats_test: ❌ FAIL: JetStream Publish
+I (47034) nats_test: 
+========== TEST: JetStream Consumer Create ==========
+I (47034) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (47060) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (47186) espidf-nats: Server max_payload: 1048576 bytes
+I (47187) espidf-nats: Server requires TLS
+I (47187) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (47195) espidf-nats: Starting TLS handshake...
+I (47754) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (47756) nats_test: ✅ Connected to NATS
+E (47817) espidf-nats: Read error: -30592
+W (47819) nats_test: ❌ Disconnected from NATS
+I (48819) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (48827) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (48843) espidf-nats: Server max_payload: 1048576 bytes
+I (48843) espidf-nats: Server requires TLS
+I (48844) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (48852) espidf-nats: Starting TLS handshake...
+I (49407) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (49409) nats_test: ✅ Connected to NATS
+E (49470) espidf-nats: Read error: -30592
+W (49472) nats_test: ❌ Disconnected from NATS
+I (50472) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (50478) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (50497) espidf-nats: Server max_payload: 1048576 bytes
+I (50498) espidf-nats: Server requires TLS
+I (50498) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (50507) espidf-nats: Starting TLS handshake...
+I (51070) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (51071) nats_test: ✅ Connected to NATS
+E (51133) espidf-nats: Read error: -30592
+W (51135) nats_test: ❌ Disconnected from NATS
+I (52135) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (52141) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (52157) espidf-nats: Server max_payload: 1048576 bytes
+I (52158) espidf-nats: Server requires TLS
+I (52158) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (52167) espidf-nats: Starting TLS handshake...
+I (52717) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (52718) nats_test: ✅ Connected to NATS
+E (52780) espidf-nats: Read error: -30592
+W (52782) nats_test: ❌ Disconnected from NATS
+I (53782) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (53789) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (53806) espidf-nats: Server max_payload: 1048576 bytes
+I (53807) espidf-nats: Server requires TLS
+I (53807) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (53816) espidf-nats: Starting TLS handshake...
+I (54373) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (54374) nats_test: ✅ Connected to NATS
+E (54486) espidf-nats: Read error: -30592
+W (54488) nats_test: ❌ Disconnected from NATS
+E (55188) nats_test: ❌ FAIL: JetStream Consumer Create
+I (55688) nats_test: 
+========== TEST: JetStream Pull ==========
+I (55688) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (55693) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (55709) espidf-nats: Server max_payload: 1048576 bytes
+I (55709) espidf-nats: Server requires TLS
+I (55710) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (55719) espidf-nats: Starting TLS handshake...
+I (56269) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (56270) nats_test: ✅ Connected to NATS
+E (56331) espidf-nats: Read error: -30592
+W (56333) nats_test: ❌ Disconnected from NATS
+I (57333) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (57341) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (57358) espidf-nats: Server max_payload: 1048576 bytes
+I (57358) espidf-nats: Server requires TLS
+I (57359) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (57367) espidf-nats: Starting TLS handshake...
+I (57914) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (57916) nats_test: ✅ Connected to NATS
+E (57977) espidf-nats: Read error: -30592
+W (57979) nats_test: ❌ Disconnected from NATS
+I (58979) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (58985) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (59003) espidf-nats: Server max_payload: 1048576 bytes
+I (59003) espidf-nats: Server requires TLS
+I (59003) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (59012) espidf-nats: Starting TLS handshake...
+I (59618) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (59619) nats_test: ✅ Connected to NATS
+E (59681) espidf-nats: Read error: -30592
+W (59683) nats_test: ❌ Disconnected from NATS
+I (60683) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (60687) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (60703) espidf-nats: Server max_payload: 1048576 bytes
+I (60704) espidf-nats: Server requires TLS
+I (60704) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (60713) espidf-nats: Starting TLS handshake...
+I (61269) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (61271) nats_test: ✅ Connected to NATS
+E (61382) espidf-nats: Read error: -30592
+W (61384) nats_test: ❌ Disconnected from NATS
+I (62384) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (62390) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (62408) espidf-nats: Server max_payload: 1048576 bytes
+I (62409) espidf-nats: Server requires TLS
+I (62409) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (62418) espidf-nats: Starting TLS handshake...
+I (62967) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (62968) nats_test: ✅ Connected to NATS
+E (63030) espidf-nats: Read error: -30592
+W (63032) nats_test: ❌ Disconnected from NATS
+W (63732) nats_test: ⚠️  JetStream Pull - no messages (may be expected)
+I (64232) nats_test: 
+========== KEY-VALUE STORE ==========
+I (64232) nats_test: 
+========== TEST: KV Bucket Create ==========
+I (64232) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (64242) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (64263) espidf-nats: Server max_payload: 1048576 bytes
+I (64263) espidf-nats: Server requires TLS
+I (64264) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (64272) espidf-nats: Starting TLS handshake...
+I (64836) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (64837) nats_test: ✅ Connected to NATS
+E (64898) espidf-nats: Read error: -30592
+W (64900) nats_test: ❌ Disconnected from NATS
+I (65900) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (65907) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (65923) espidf-nats: Server max_payload: 1048576 bytes
+I (65923) espidf-nats: Server requires TLS
+I (65923) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (65932) espidf-nats: Starting TLS handshake...
+I (66489) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (66491) nats_test: ✅ Connected to NATS
+E (66552) espidf-nats: Read error: -30592
+W (66554) nats_test: ❌ Disconnected from NATS
+I (67554) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (67560) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (67576) espidf-nats: Server max_payload: 1048576 bytes
+I (67576) espidf-nats: Server requires TLS
+I (67576) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (67585) espidf-nats: Starting TLS handshake...
+I (68167) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (68169) nats_test: ✅ Connected to NATS
+E (68230) espidf-nats: Read error: -30592
+W (68232) nats_test: ❌ Disconnected from NATS
+I (69232) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (69238) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (69257) espidf-nats: Server max_payload: 1048576 bytes
+I (69258) espidf-nats: Server requires TLS
+I (69258) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (69266) espidf-nats: Starting TLS handshake...
+I (69822) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (69823) nats_test: ✅ Connected to NATS
+E (69935) espidf-nats: Read error: -30592
+W (69937) nats_test: ❌ Disconnected from NATS
+I (70937) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (70948) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (70967) espidf-nats: Server max_payload: 1048576 bytes
+I (70967) espidf-nats: Server requires TLS
+I (70968) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (70976) espidf-nats: Starting TLS handshake...
+I (71534) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (71535) nats_test: ✅ Connected to NATS
+E (71596) espidf-nats: Read error: -30592
+W (71598) nats_test: ❌ Disconnected from NATS
+E (72298) nats_test: ❌ FAIL: KV Bucket Create
+I (72798) nats_test: 
+========== TEST: KV Put ==========
+I (72798) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (72803) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (72820) espidf-nats: Server max_payload: 1048576 bytes
+I (72820) espidf-nats: Server requires TLS
+I (72820) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (72829) espidf-nats: Starting TLS handshake...
+I (73381) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (73383) nats_test: ✅ Connected to NATS
+E (73444) espidf-nats: Read error: -30592
+W (73446) nats_test: ❌ Disconnected from NATS
+I (74446) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (74451) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (74468) espidf-nats: Server max_payload: 1048576 bytes
+I (74468) espidf-nats: Server requires TLS
+I (74468) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (74477) espidf-nats: Starting TLS handshake...
+I (75058) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (75059) nats_test: ✅ Connected to NATS
+E (75171) espidf-nats: Read error: -30592
+W (75173) nats_test: ❌ Disconnected from NATS
+I (76173) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (76178) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (76198) espidf-nats: Server max_payload: 1048576 bytes
+I (76198) espidf-nats: Server requires TLS
+I (76199) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (76207) espidf-nats: Starting TLS handshake...
+I (76768) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (76770) nats_test: ✅ Connected to NATS
+E (76881) espidf-nats: Read error: -30592
+W (76883) nats_test: ❌ Disconnected from NATS
+I (77883) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (77889) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (77909) espidf-nats: Server max_payload: 1048576 bytes
+I (77910) espidf-nats: Server requires TLS
+I (77910) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (77919) espidf-nats: Starting TLS handshake...
+I (78482) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (78483) nats_test: ✅ Connected to NATS
+E (78544) espidf-nats: Read error: -30592
+W (78546) nats_test: ❌ Disconnected from NATS
+I (79546) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (79552) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (79568) espidf-nats: Server max_payload: 1048576 bytes
+I (79568) espidf-nats: Server requires TLS
+I (79568) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (79577) espidf-nats: Starting TLS handshake...
+I (80139) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (80140) nats_test: ✅ Connected to NATS
+E (80202) espidf-nats: Read error: -30592
+W (80204) nats_test: ❌ Disconnected from NATS
+E (80854) nats_test: ❌ FAIL: KV Put
+I (81354) nats_test: 
+========== TEST: KV Get ==========
+I (81354) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (81363) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (81381) espidf-nats: Server max_payload: 1048576 bytes
+I (81381) espidf-nats: Server requires TLS
+I (81381) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (81390) espidf-nats: Starting TLS handshake...
+I (81949) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (81951) nats_test: ✅ Connected to NATS
+E (82012) espidf-nats: Read error: -30592
+W (82014) nats_test: ❌ Disconnected from NATS
+I (83014) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (83020) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (83038) espidf-nats: Server max_payload: 1048576 bytes
+I (83039) espidf-nats: Server requires TLS
+I (83039) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (83048) espidf-nats: Starting TLS handshake...
+I (83613) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (83615) nats_test: ✅ Connected to NATS
+E (83676) espidf-nats: Read error: -30592
+W (83678) nats_test: ❌ Disconnected from NATS
+I (84678) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (84683) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (84699) espidf-nats: Server max_payload: 1048576 bytes
+I (84700) espidf-nats: Server requires TLS
+I (84700) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (84708) espidf-nats: Starting TLS handshake...
+I (85271) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (85273) nats_test: ✅ Connected to NATS
+E (85334) espidf-nats: Read error: -30592
+W (85336) nats_test: ❌ Disconnected from NATS
+I (86336) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (86343) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (86362) espidf-nats: Server max_payload: 1048576 bytes
+I (86362) espidf-nats: Server requires TLS
+I (86362) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (86371) espidf-nats: Starting TLS handshake...
+I (86932) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (86934) nats_test: ✅ Connected to NATS
+E (86995) espidf-nats: Read error: -30592
+W (86997) nats_test: ❌ Disconnected from NATS
+I (87997) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (88007) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (88025) espidf-nats: Server max_payload: 1048576 bytes
+I (88026) espidf-nats: Server requires TLS
+I (88026) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (88035) espidf-nats: Starting TLS handshake...
+I (88578) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (88580) nats_test: ✅ Connected to NATS
+E (88641) espidf-nats: Read error: -30592
+W (88643) nats_test: ❌ Disconnected from NATS
+E (89393) nats_test: ❌ FAIL: KV Get
+I (89893) nats_test: 
+========== OBJECT STORE ==========
+I (89893) nats_test: 
+========== TEST: Object Store Bucket Create ==========
+I (89894) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (89905) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (89922) espidf-nats: Server max_payload: 1048576 bytes
+I (89922) espidf-nats: Server requires TLS
+I (89922) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (89931) espidf-nats: Starting TLS handshake...
+I (90494) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (90496) nats_test: ✅ Connected to NATS
+E (90607) espidf-nats: Read error: -30592
+W (90609) nats_test: ❌ Disconnected from NATS
+I (91609) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (91615) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (91632) espidf-nats: Server max_payload: 1048576 bytes
+I (91632) espidf-nats: Server requires TLS
+I (91632) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (91641) espidf-nats: Starting TLS handshake...
+I (92192) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (92194) nats_test: ✅ Connected to NATS
+E (92255) espidf-nats: Read error: -30592
+W (92257) nats_test: ❌ Disconnected from NATS
+I (93257) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (93262) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (93279) espidf-nats: Server max_payload: 1048576 bytes
+I (93279) espidf-nats: Server requires TLS
+I (93279) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (93288) espidf-nats: Starting TLS handshake...
+I (93842) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (93844) nats_test: ✅ Connected to NATS
+E (93956) espidf-nats: Read error: -30592
+W (93958) nats_test: ❌ Disconnected from NATS
+I (94959) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (94965) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (94982) espidf-nats: Server max_payload: 1048576 bytes
+I (94983) espidf-nats: Server requires TLS
+I (94983) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (94991) espidf-nats: Starting TLS handshake...
+I (95558) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (95559) nats_test: ✅ Connected to NATS
+E (95620) espidf-nats: Read error: -30592
+W (95622) nats_test: ❌ Disconnected from NATS
+I (96622) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (96628) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (96647) espidf-nats: Server max_payload: 1048576 bytes
+I (96647) espidf-nats: Server requires TLS
+I (96647) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (96656) espidf-nats: Starting TLS handshake...
+I (97218) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (97220) nats_test: ✅ Connected to NATS
+E (97281) espidf-nats: Read error: -30592
+W (97283) nats_test: ❌ Disconnected from NATS
+E (97933) nats_test: ❌ FAIL: Object Bucket Create
+I (98433) nats_test: 
+========== TEST: Object Store Put ==========
+I (98444) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (98465) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (98485) espidf-nats: Server max_payload: 1048576 bytes
+I (98485) espidf-nats: Server requires TLS
+I (98486) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (98494) espidf-nats: Starting TLS handshake...
+I (99037) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (99039) nats_test: ✅ Connected to NATS
+E (99100) espidf-nats: Read error: -30592
+W (99102) nats_test: ❌ Disconnected from NATS
+I (100102) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (100110) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (100128) espidf-nats: Server max_payload: 1048576 bytes
+I (100128) espidf-nats: Server requires TLS
+I (100129) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (100138) espidf-nats: Starting TLS handshake...
+I (100696) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (100698) nats_test: ✅ Connected to NATS
+E (100809) espidf-nats: Read error: -30592
+W (100811) nats_test: ❌ Disconnected from NATS
+I (101811) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (101815) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (101834) espidf-nats: Server max_payload: 1048576 bytes
+I (101834) espidf-nats: Server requires TLS
+I (101835) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (101843) espidf-nats: Starting TLS handshake...
+I (102399) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (102400) nats_test: ✅ Connected to NATS
+E (102461) espidf-nats: Read error: -30592
+W (102463) nats_test: ❌ Disconnected from NATS
+I (103463) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (103469) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (103488) espidf-nats: Server max_payload: 1048576 bytes
+I (103489) espidf-nats: Server requires TLS
+I (103489) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (103498) espidf-nats: Starting TLS handshake...
+I (104040) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (104042) nats_test: ✅ Connected to NATS
+E (104103) espidf-nats: Read error: -30592
+W (104105) nats_test: ❌ Disconnected from NATS
+I (105105) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (105130) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (105146) espidf-nats: Server max_payload: 1048576 bytes
+I (105146) espidf-nats: Server requires TLS
+I (105146) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (105155) espidf-nats: Starting TLS handshake...
+I (105715) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (105717) nats_test: ✅ Connected to NATS
+E (105778) espidf-nats: Read error: -30592
+W (105780) nats_test: ❌ Disconnected from NATS
+I (106780) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (106785) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (106800) espidf-nats: Server max_payload: 1048576 bytes
+I (106801) espidf-nats: Server requires TLS
+I (106801) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (106810) espidf-nats: Starting TLS handshake...
+I (107362) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (107364) nats_test: ✅ Connected to NATS
+E (107475) espidf-nats: Read error: -30592
+W (107477) nats_test: ❌ Disconnected from NATS
+I (108477) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (108482) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (108500) espidf-nats: Server max_payload: 1048576 bytes
+I (108501) espidf-nats: Server requires TLS
+I (108501) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (108510) espidf-nats: Starting TLS handshake...
+I (109062) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (109063) nats_test: ✅ Connected to NATS
+E (109125) espidf-nats: Read error: -30592
+W (109127) nats_test: ❌ Disconnected from NATS
+I (110127) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (110143) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (110163) espidf-nats: Server max_payload: 1048576 bytes
+I (110163) espidf-nats: Server requires TLS
+I (110163) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (110172) espidf-nats: Starting TLS handshake...
+I (110747) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (110749) nats_test: ✅ Connected to NATS
+E (110810) espidf-nats: Read error: -30592
+W (110812) nats_test: ❌ Disconnected from NATS
+I (111812) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (111820) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (111837) espidf-nats: Server max_payload: 1048576 bytes
+I (111838) espidf-nats: Server requires TLS
+I (111838) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (111847) espidf-nats: Starting TLS handshake...
+I (112393) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (112394) nats_test: ✅ Connected to NATS
+E (112456) espidf-nats: Read error: -30592
+W (112458) nats_test: ❌ Disconnected from NATS
+I (113458) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (113467) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (113483) espidf-nats: Server max_payload: 1048576 bytes
+I (113484) espidf-nats: Server requires TLS
+I (113484) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (113493) espidf-nats: Starting TLS handshake...
+I (114055) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (114057) nats_test: ✅ Connected to NATS
+E (114319) espidf-nats: Read error: -30592
+W (114321) nats_test: ❌ Disconnected from NATS
+I (115321) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (115327) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (115345) espidf-nats: Server max_payload: 1048576 bytes
+I (115346) espidf-nats: Server requires TLS
+I (115346) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (115355) espidf-nats: Starting TLS handshake...
+I (115917) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (115919) nats_test: ✅ Connected to NATS
+E (115980) espidf-nats: Read error: -30592
+W (115982) nats_test: ❌ Disconnected from NATS
+I (116982) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (116989) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (117008) espidf-nats: Server max_payload: 1048576 bytes
+I (117008) espidf-nats: Server requires TLS
+I (117009) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (117018) espidf-nats: Starting TLS handshake...
+I (117576) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (117577) nats_test: ✅ Connected to NATS
+E (117638) espidf-nats: Read error: -30592
+W (117640) nats_test: ❌ Disconnected from NATS
+I (118640) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (118645) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (118661) espidf-nats: Server max_payload: 1048576 bytes
+I (118661) espidf-nats: Server requires TLS
+I (118662) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (118671) espidf-nats: Starting TLS handshake...
+I (119232) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (119234) nats_test: ✅ Connected to NATS
+E (119395) espidf-nats: Read error: -30592
+W (119397) nats_test: ❌ Disconnected from NATS
+I (120397) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (120402) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (120417) espidf-nats: Server max_payload: 1048576 bytes
+I (120418) espidf-nats: Server requires TLS
+I (120418) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (120428) espidf-nats: Starting TLS handshake...
+I (120983) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (120984) nats_test: ✅ Connected to NATS
+E (121046) espidf-nats: Read error: -30592
+W (121048) nats_test: ❌ Disconnected from NATS
+E (121948) nats_test: ❌ FAIL: Object Put
+I (122448) nats_test: 
+========== TEST: Object Store Get Info ==========
+I (122448) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (122454) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (122475) espidf-nats: Server max_payload: 1048576 bytes
+I (122475) espidf-nats: Server requires TLS
+I (122475) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (122485) espidf-nats: Starting TLS handshake...
+I (123035) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (123037) nats_test: ✅ Connected to NATS
+E (123152) espidf-nats: Read error: -30592
+W (123153) nats_test: ❌ Disconnected from NATS
+I (124154) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (124159) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (124175) espidf-nats: Server max_payload: 1048576 bytes
+I (124175) espidf-nats: Server requires TLS
+I (124176) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (124184) espidf-nats: Starting TLS handshake...
+I (124752) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (124753) nats_test: ✅ Connected to NATS
+E (124815) espidf-nats: Read error: -30592
+W (124817) nats_test: ❌ Disconnected from NATS
+I (125817) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (125822) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (125838) espidf-nats: Server max_payload: 1048576 bytes
+I (125838) espidf-nats: Server requires TLS
+I (125839) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (125847) espidf-nats: Starting TLS handshake...
+I (126400) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (126401) nats_test: ✅ Connected to NATS
+E (126463) espidf-nats: Read error: -30592
+W (126465) nats_test: ❌ Disconnected from NATS
+I (127465) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (127470) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (127489) espidf-nats: Server max_payload: 1048576 bytes
+I (127489) espidf-nats: Server requires TLS
+I (127490) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (127499) espidf-nats: Starting TLS handshake...
+I (128046) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (128048) nats_test: ✅ Connected to NATS
+E (128109) espidf-nats: Read error: -30592
+W (128111) nats_test: ❌ Disconnected from NATS
+I (129111) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (129116) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (129134) espidf-nats: Server max_payload: 1048576 bytes
+I (129135) espidf-nats: Server requires TLS
+I (129135) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (129144) espidf-nats: Starting TLS handshake...
+I (129695) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (129697) nats_test: ✅ Connected to NATS
+E (129758) espidf-nats: Read error: -30592
+W (129760) nats_test: ❌ Disconnected from NATS
+E (130460) nats_test: ❌ FAIL: Object Get Info
+I (130960) nats_test: 
+========== ADVANCED FEATURES ==========
+I (130960) nats_test: 
+========== TEST: Ordered Consumer ==========
+I (130960) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (130974) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (130992) espidf-nats: Server max_payload: 1048576 bytes
+I (130993) espidf-nats: Server requires TLS
+I (130993) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (131002) espidf-nats: Starting TLS handshake...
+I (131554) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (131556) nats_test: ✅ Connected to NATS
+E (131617) espidf-nats: Read error: -30592
+W (131619) nats_test: ❌ Disconnected from NATS
+I (132619) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (132652) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (132670) espidf-nats: Server max_payload: 1048576 bytes
+I (132671) espidf-nats: Server requires TLS
+I (132671) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (132680) espidf-nats: Starting TLS handshake...
+I (133236) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (133238) nats_test: ✅ Connected to NATS
+E (133299) espidf-nats: Read error: -30592
+W (133301) nats_test: ❌ Disconnected from NATS
+I (134301) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (134308) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (134325) espidf-nats: Server max_payload: 1048576 bytes
+I (134325) espidf-nats: Server requires TLS
+I (134325) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (134334) espidf-nats: Starting TLS handshake...
+I (134886) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (134887) nats_test: ✅ Connected to NATS
+E (134948) espidf-nats: Read error: -30592
+W (134950) nats_test: ❌ Disconnected from NATS
+I (135950) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (135954) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (135973) espidf-nats: Server max_payload: 1048576 bytes
+I (135973) espidf-nats: Server requires TLS
+I (135973) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (135982) espidf-nats: Starting TLS handshake...
+I (136550) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (136552) nats_test: ✅ Connected to NATS
+E (136613) espidf-nats: Read error: -30592
+W (136615) nats_test: ❌ Disconnected from NATS
+I (137615) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (137622) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (137638) espidf-nats: Server max_payload: 1048576 bytes
+I (137638) espidf-nats: Server requires TLS
+I (137639) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (137648) espidf-nats: Starting TLS handshake...
+I (138196) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (138197) nats_test: ✅ Connected to NATS
+E (138259) espidf-nats: Read error: -30592
+W (138261) nats_test: ❌ Disconnected from NATS
+E (139011) nats_test: ❌ FAIL: Ordered Consumer
+I (139511) nats_test: 
+========== TEST: JetStream Account Info ==========
+I (139511) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (139520) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (139536) espidf-nats: Server max_payload: 1048576 bytes
+I (139536) espidf-nats: Server requires TLS
+I (139536) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (139545) espidf-nats: Starting TLS handshake...
+I (140098) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (140099) nats_test: ✅ Connected to NATS
+E (140160) espidf-nats: Read error: -30592
+W (140162) nats_test: ❌ Disconnected from NATS
+I (141162) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (141167) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (141186) espidf-nats: Server max_payload: 1048576 bytes
+I (141186) espidf-nats: Server requires TLS
+I (141187) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (141195) espidf-nats: Starting TLS handshake...
+I (141751) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (141753) nats_test: ✅ Connected to NATS
+E (141814) espidf-nats: Read error: -30592
+W (141816) nats_test: ❌ Disconnected from NATS
+I (142816) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (142821) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (142837) espidf-nats: Server max_payload: 1048576 bytes
+I (142838) espidf-nats: Server requires TLS
+I (142838) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (142847) espidf-nats: Starting TLS handshake...
+I (143392) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (143394) nats_test: ✅ Connected to NATS
+E (143455) espidf-nats: Read error: -30592
+W (143457) nats_test: ❌ Disconnected from NATS
+I (144457) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (144465) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (144483) espidf-nats: Server max_payload: 1048576 bytes
+I (144484) espidf-nats: Server requires TLS
+I (144484) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (144493) espidf-nats: Starting TLS handshake...
+I (145038) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (145039) nats_test: ✅ Connected to NATS
+E (145101) espidf-nats: Read error: -30592
+W (145103) nats_test: ❌ Disconnected from NATS
+I (146103) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (146112) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (146133) espidf-nats: Server max_payload: 1048576 bytes
+I (146134) espidf-nats: Server requires TLS
+I (146134) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (146143) espidf-nats: Starting TLS handshake...
+I (146706) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (146707) nats_test: ✅ Connected to NATS
+E (146818) espidf-nats: Read error: -30592
+W (146820) nats_test: ❌ Disconnected from NATS
+E (147520) nats_test: ❌ FAIL: Account Info
+I (148020) nats_test: 
+========== TEST: Connection Metrics ==========
+I (148020) nats_test: Connection Metrics:
+I (148020) nats_test:   Messages sent: 2
+I (148022) nats_test:   Messages received: 0
+I (148026) nats_test:   Bytes sent: 10898
+I (148030) nats_test:   Bytes received: 0
+I (148034) nats_test:   Reconnections: 0
+I (148037) nats_test:   Uptime: 0 ms
+E (148041) nats_test: ❌ FAIL: Connection Metrics - no traffic
+I (148546) nats_test: 
+========== TEST: Reconnection with Subscription Restoration ==========
+E (148546) nats_test: ❌ FAIL: Reconnection - failed to subscribe
+I (149049) nats_test: 
+
+I (149049) nats_test: ╔════════════════════════════════════════════════════════╗
+I (149057) nats_test: ║                    TEST SUMMARY                        ║
+I (149065) nats_test: ╚════════════════════════════════════════════════════════╝
+I (149082) nats_test:   ✅ Passed: 0
+I (149085) nats_test:   ❌ Failed: 16
+I (149089) nats_test:   Total:  16
+I (149092) nats_test: 
+
+W (149094) nats_test: ⚠️  Some tests failed. Check logs above.
+I (149100) nats_test: Keeping connection alive. Monitoring metrics every 30s...
+I (149107) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (149118) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (149136) espidf-nats: Server max_payload: 1048576 bytes
+I (149136) espidf-nats: Server requires TLS
+I (149137) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (149145) espidf-nats: Starting TLS handshake...
+I (149696) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (149697) nats_test: ✅ Connected to NATS
+E (149750) espidf-nats: Read error: -30592
+W (149752) nats_test: ❌ Disconnected from NATS
+I (150752) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (150759) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (150775) espidf-nats: Server max_payload: 1048576 bytes
+I (150775) espidf-nats: Server requires TLS
+I (150776) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (150784) espidf-nats: Starting TLS handshake...
+I (151334) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (151336) nats_test: ✅ Connected to NATS
+E (151388) espidf-nats: Read error: -30592
+W (151390) nats_test: ❌ Disconnected from NATS
+I (152390) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (152397) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (152417) espidf-nats: Server max_payload: 1048576 bytes
+I (152418) espidf-nats: Server requires TLS
+I (152418) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (152427) espidf-nats: Starting TLS handshake...
+I (152982) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (152983) nats_test: ✅ Connected to NATS
+E (153034) espidf-nats: Read error: -30592
+W (153036) nats_test: ❌ Disconnected from NATS
+I (154036) espidf-nats: Attempting to connect to <XXXXXXXXXX>:4224
+I (154042) espidf-nats: Connected to <XXXXXXXXXX>:4224
+I (154065) espidf-nats: Server max_payload: 1048576 bytes
+I (154065) espidf-nats: Server requires TLS
+I (154065) espidf-nats: Upgrading connection to TLS on socket 48 (using mbedtls)...
+I (154074) espidf-nats: Starting TLS handshake...
+I (154631) espidf-nats: TLS upgrade successful (cipher: TLS1-3-AES-128-GCM-SHA256)
+I (154633) nats_test: ✅ Connected to NATS
+E (154684) espidf-nats: Read error: -30592
+W (154686) nats_test: ❌ Disconnected from NATS

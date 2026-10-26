@@ -55,7 +55,7 @@ DNS.3 = nats-server
 DNS.4 = *.local
 IP.1 = 127.0.0.1
 IP.2 = ::1
-# Add your server's IP address here for TLS to work
+# Add your server's IP address here for TLS cert validation to work
 # IP.3 = 192.168.x.x
 EOF
 

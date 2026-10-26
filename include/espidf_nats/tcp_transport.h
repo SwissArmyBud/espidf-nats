@@ -604,6 +604,7 @@ public:
             ca_configured = true;
         }
 
+#if FIX_MTLS_ATTACHMENT
         // Initialize client mTLS context if configuration values are present
         if (
             tls_config.client_cert != NULL && tls_config.client_cert_len > 0 &&
@@ -656,6 +657,7 @@ public:
             }
             ESP_LOGI(TAG, "Attached mTLS certificate to client session");
         }
+#endif
 
         // Set up SSL config
         ret = mbedtls_ssl_config_defaults(mbedtls_conf,

@@ -27,6 +27,7 @@
 #include "esp_log.h"
 #include "nvs_flash.h"
 #include "driver/gpio.h"
+#define FIX_MTLS_ATTACHMENT 0 // DEMO - Set to 0 (nofix) or 1 (fix) for different library behavior
 #include "espidf_nats.h"
 
 static const char* TAG = "nats_test";
@@ -40,8 +41,8 @@ static const char* TAG = "nats_test";
 #define NATS_PORT      4223                     // JetStream port (from docker-compose)
 
 // TLS Configuration
-#define NATS_USE_TLS   0                // Set to 1 to enable TLS
-#define NATS_USE_MTLS  0                // Set to 1 when TLS is enabled to also enable mTLS
+#define NATS_USE_TLS   1                // Set to 1 to enable TLS
+#define NATS_USE_MTLS  1                // Set to 1 when TLS is enabled to also enable mTLS
 #define NATS_TLS_PORT  4224             // TLS port (from docker-compose)
 
 // Ensure certificates are generated and included via EMBED_TXTFILES in the CMakeLists.txt file
@@ -1183,6 +1184,7 @@ extern "C" void app_main(void)
 {
     ESP_LOGI(TAG, "ESP-IDF NATS Client - Comprehensive Test");
     ESP_LOGI(TAG, "ESP-IDF Version: %s", esp_get_idf_version());
+    ESP_LOGI(TAG, "[NATS Client FIX_MTLS_ATTACHMENT -> %d]", FIX_MTLS_ATTACHMENT);
 
     // Initialize NVS
     esp_err_t ret = nvs_flash_init();

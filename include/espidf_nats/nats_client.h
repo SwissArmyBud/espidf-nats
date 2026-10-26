@@ -2278,7 +2278,8 @@ class NATS {
                     return false;
                 }
             }       
-                          
+                                     
+#if FIX_MTLS_ATTACHMENT
             // Initialize client mTLS context if configuration values are present
             if (
                 tls_config.client_cert != NULL && tls_config.client_cert_len > 0 &&
@@ -2331,6 +2332,7 @@ class NATS {
                 }
                 ESP_LOGI(tag, "Attached mTLS certificate to client session");
             }
+#endif
 
             // Set up SSL config
             ret = mbedtls_ssl_config_defaults(mbedtls_conf,
